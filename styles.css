@@ -35,7 +35,7 @@ body {
 }
 
 .button-mayor {
-    background-color: #5E2D8A; /* Color PANTONE 266 C */
+    background-color: #FF3399; /* Nuevo color para el botón mayor */
 }
 
 .button-menor {
@@ -45,7 +45,7 @@ body {
 }
 
 .button-mayor:hover {
-    background-color: #4a1f6b; /* Cambio de color al hacer hover */
+    background-color: #cc297a; /* Cambio de color al hacer hover */
 }
 
 .button-menor:hover {
@@ -126,6 +126,7 @@ form button:hover {
         font-size: 2vw; /* Tamaño de fuente relativo */
     }
 }
+
 
 
 
