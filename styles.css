@@ -7,8 +7,8 @@ body {
 .hero {
     position: relative;
     display: flex;
-    justify-content: center; /* Centramos los elementos */
-    align-items: center; /* Alineamos los elementos verticalmente */
+    justify-content: center;
+    align-items: center;
     height: 100vh;
     background-color: #f5f5f5;
     text-align: center;
@@ -16,47 +16,51 @@ body {
 
 .button-container {
     position: absolute;
-    bottom: 30px;  /* Colocamos los botones debajo del texto easybet */
+    bottom: 30px; 
     width: 100%;
     display: flex;
-    justify-content: center;  /* Centramos los botones */
-    gap: 30px;  /* Separación entre los botones */
+    justify-content: flex-start; /* Alineamos los botones a la izquierda */
+    gap: 20px;  /* Separación entre los botones */
+    padding-left: 30px; /* Espaciado a la izquierda */
 }
 
 .button-mayor {
-    padding: 15px 30px;
-    background-color: #ff0099; /* Color de fondo del botón mayor de 18 */
+    padding: 15px 25px; /* Ajuste de padding */
+    background-color: #ff0099;
     color: white;
     text-decoration: none;
     font-size: 18px;
-    border-radius: 50px; /* Borde redondeado */
+    border-radius: 50px;
     border: none;
+    transition: background-color 0.3s ease; /* Transición para hover */
 }
 
 .button-menor {
-    padding: 15px 30px;
-    background-color: transparent; /* Fondo transparente */
+    padding: 15px 25px; /* Ajuste de padding */
+    background-color: transparent;
     color: #ff0099;
     text-decoration: none;
     font-size: 18px;
-    border: 2px solid #ff0099; /* Borde rosado */
+    border: 2px solid #ff0099;
     border-radius: 50px;
+    transition: all 0.3s ease; /* Transición para hover */
 }
 
 .button-mayor:hover, .button-menor:hover {
     opacity: 0.8;
+    transform: translateY(-2px); /* Pequeño efecto de elevación */
 }
 
 .content {
     padding: 50px;
     display: flex;
     justify-content: flex-start; /* Alineamos a la izquierda */
-    align-items: center; /* Centramos verticalmente */
+    align-items: center;
     min-height: 100vh;
 }
 
 .form-container {
-    margin-left: 20px;  /* Alineamos un poco hacia la izquierda */
+    margin-left: 20px;
 }
 
 form input {
@@ -75,6 +79,7 @@ form button {
     border: none;
     border-radius: 50px;
     cursor: pointer;
+    transition: background-color 0.3s ease; /* Transición para hover */
 }
 
 form button:hover {
