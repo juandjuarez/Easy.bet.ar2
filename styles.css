@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    overflow: hidden; /* Evitar desplazamiento en la página 1 */
+    overflow: hidden; /* Evitar desplazamiento en la página */
 }
 
 .hero {
@@ -57,7 +57,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Igual que la página 1 */
+    height: 100vh; /* Igual que la página */
     position: relative;
     overflow: hidden; /* Para evitar el fondo blanco */
 }
@@ -72,11 +72,13 @@ body {
 }
 
 .form-container {
-    margin-left: 30px; /* Ajusta el margen según necesites */
     display: flex;
     flex-direction: column; /* Alineamos los campos de entrada en columna */
     align-items: flex-start; /* Alineamos los campos a la izquierda */
-    position: relative; /* Para colocarla sobre la imagen */
+    position: absolute; /* Para colocarla sobre la imagen */
+    top: 50%; /* Centra verticalmente */
+    left: 30px; /* Alinea a la izquierda */
+    transform: translate(-50%, -50%); /* Ajusta la posición vertical y horizontal para centrar */
     z-index: 1; /* Asegura que el formulario esté encima de la imagen */
 }
 
@@ -107,3 +109,4 @@ form button {
 form button:hover {
     background-color: #4a1f6b; /* Cambio de color al hacer hover */
 }
+
