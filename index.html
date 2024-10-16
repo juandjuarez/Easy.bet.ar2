@@ -5,13 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EasyBet Pre-Registro</title>
     <link rel="stylesheet" href="styles.css">
-    <script>
-        // Función para mostrar la segunda página cuando se hace clic en el botón
-        function mostrarPagina2() {
-            document.getElementById('page1').style.display = 'none';  // Oculta la página 1
-            document.getElementById('page2').style.display = 'block';  // Muestra la página 2
-        }
-    </script>
+    <script src="scripts.js" defer></script>
 </head>
 <body>
     <!-- Section 1 - Hero Image with two buttons -->
@@ -27,13 +21,15 @@
     <section id="page2" class="content" style="display: none;">
         <img src="page_2.jpg" alt="Landing Page Section 2" class="background-image">
         <form action="/submit" method="POST" class="form-container">
-            <input type="text" name="nombre" placeholder="Nombre" required>
-            <input type="email" name="email" placeholder="E-mail" required>
-            <input type="tel" name="telefono" placeholder="Contacto +54" required>
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="E-mail" required>
+            <label for="telefono">Contacto +54</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="Contacto +54" required>
             <button type="submit" class="button-mayor">Suscribirme</button>
         </form>
     </section>
 </body>
 </html>
-
 
