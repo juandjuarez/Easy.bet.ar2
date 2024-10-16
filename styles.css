@@ -78,7 +78,7 @@ body {
     position: absolute; /* Para colocarla sobre la imagen */
     top: 50%; /* Centra verticalmente */
     left: 30px; /* Alinea a la izquierda */
-    transform: translate(-50%, -50%); /* Ajusta la posición vertical y horizontal para centrar */
+    transform: translate(50%, 30%); /* Ajusta la posición vertical y horizontal para centrar */
     z-index: 1; /* Asegura que el formulario esté encima de la imagen */
 }
 
