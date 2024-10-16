@@ -19,9 +19,11 @@ body {
     top: 50%; /* Centra verticalmente */
     left: 30px; /* Alinea a la izquierda */
     transform: translateY(-50%); /* Ajusta la posición vertical para centrar */
-    display: flex;
+    display: flex; /* Mantiene el uso de flexbox */
+    flex-direction: row; /* Asegura que los botones estén uno al lado del otro */
     gap: 20px; /* Espacio entre los botones */
 }
+
 
 .button-mayor, .button-menor {
     padding: 15px 25px; /* Ajuste de padding */
