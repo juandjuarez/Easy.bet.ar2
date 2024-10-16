@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    overflow: hidden; /* Evitar desplazamiento en la página 1 */
 }
 
 .hero {
@@ -11,7 +12,6 @@ body {
     align-items: center; /* Alineamos los elementos verticalmente */
     height: 100vh;
     background-color: #f5f5f5;
-    text-align: center;
 }
 
 .button-container {
@@ -35,17 +35,17 @@ body {
 }
 
 .button-mayor {
-    background-color: #ff0099; /* Color de fondo del botón mayor */
+    background-color: #5E2D8A; /* Color PANTONE 266 C */
 }
 
 .button-menor {
-    background-color: transparent; /* Fondo transparente */
-    color: #ff0099; /* Color del texto del botón menor */
-    border: 2px solid #ff0099; /* Borde rosado */
+    background-color: #2E2A7B; /* Color PANTONE 275 C */
+    color: white; /* Color del texto del botón menor */
+    border: 2px solid #2E2A7B; /* Borde del color menor */
 }
 
 .button-mayor:hover {
-    background-color: #e60088; /* Cambio de color al hacer hover */
+    background-color: #4a1f6b; /* Cambio de color al hacer hover */
 }
 
 .button-menor:hover {
@@ -56,14 +56,13 @@ body {
 .content {
     padding: 50px;
     display: flex;
-    justify-content: center; /* Centramos horizontalmente */
-    align-items: center; /* Alineamos verticalmente */
+    flex-direction: column; /* Alineamos elementos verticalmente */
+    align-items: flex-start; /* Alineamos a la izquierda */
     min-height: 100vh;
-    position: relative; /* Para poder alinear el formulario */
 }
 
 .form-container {
-    margin-left: 20px; /* Ajusta el margen según necesites */
+    margin-left: 30px; /* Ajusta el margen según necesites */
     display: flex;
     flex-direction: column; /* Alineamos los campos de entrada en columna */
     align-items: flex-start; /* Alineamos los campos a la izquierda */
@@ -80,7 +79,7 @@ form input {
 
 form button {
     padding: 15px 30px;
-    background-color: #ff0099;
+    background-color: #5E2D8A; /* Color PANTONE 266 C */
     color: white;
     border: none;
     border-radius: 50px;
@@ -89,7 +88,7 @@ form button {
 }
 
 form button:hover {
-    background-color: #e60088; /* Cambio de color al hacer hover */
+    background-color: #4a1f6b; /* Cambio de color al hacer hover */
 }
 
 
