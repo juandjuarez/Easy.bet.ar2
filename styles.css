@@ -7,17 +7,16 @@ body {
 .hero {
     position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: flex-start; /* Alinea los elementos a la izquierda */
+    align-items: flex-start; /* Alinea los elementos arriba */
     height: 100vh;
     background-color: #f5f5f5;
 }
 
 .button-container {
     position: absolute;
-    bottom: 150px;
-    left: 50%;
-    transform: translateX(-50%);
+    top: 50px;  /* Espacio desde arriba */
+    left: 50px; /* Espacio desde la izquierda */
     text-align: center;
 }
 
@@ -77,7 +76,4 @@ form button {
 form button:hover {
     background-color: #e68aac;
 }
-.content {
-    padding: 50px;
-    text-align: center;
-}
+
