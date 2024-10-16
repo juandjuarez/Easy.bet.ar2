@@ -25,8 +25,8 @@ body {
 }
 
 .button-mayor, .button-menor {
-    padding: 0.8vw 1.5vw; /* Ajuste de padding usando unidades relativas */
-    font-size: 1.2vw; /* Tamaño de fuente relativo */
+    padding: 0.6vw 1.2vw; /* Ajuste de padding usando unidades relativas más pequeñas */
+    font-size: 1vw; /* Tamaño de fuente más pequeño */
     color: white; /* Color del texto del botón mayor */
     text-decoration: none; /* Quitamos el subrayado */
     border-radius: 50px;
@@ -77,7 +77,8 @@ body {
     align-items: flex-start; /* Alineamos los campos a la izquierda */
     position: absolute; /* Para colocarla sobre la imagen */
     top: 50%; /* Centra verticalmente */
-    left: 30px; /* Alinea a la izquierda */
+    left: 5%; /* Ajusta la alineación a la izquierda para que no se salga */
+    width: 90%; /* Asegura que el formulario no ocupe todo el ancho */
     transform: translateY(-50%); /* Ajusta la posición vertical para centrar */
     z-index: 1; /* Asegura que el formulario esté encima de la imagen */
 }
@@ -113,12 +114,17 @@ form button:hover {
 /* Media Queries para ajustar en diferentes tamaños de pantalla */
 @media (max-width: 768px) {
     .button-mayor, .button-menor {
-        padding: 1.5vw 2.5vw; /* Ajuste de padding para pantallas más pequeñas */
-        font-size: 2vw; /* Tamaño de fuente relativo */
+        padding: 1.2vw 2vw; /* Ajuste de padding para pantallas más pequeñas */
+        font-size: 1.6vw; /* Tamaño de fuente relativo ajustado */
+    }
+
+    .form-container {
+        left: 10px; /* Más margen para pantallas pequeñas */
+        width: 90vw; /* Asegura que el formulario se ajuste bien */
     }
 
     form input {
-        width: 80vw; /* Ancho del campo de entrada relativo */
+        width: 90vw; /* Ancho más ajustado en pantallas pequeñas */
     }
 
     form button {
