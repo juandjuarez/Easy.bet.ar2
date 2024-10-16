@@ -7,66 +7,72 @@ body {
 .hero {
     position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center; /* Centramos los elementos horizontalmente */
+    align-items: center; /* Alineamos los elementos verticalmente */
     height: 100vh;
     background-color: #f5f5f5;
     text-align: center;
 }
 
 .button-container {
-    position: absolute;
-    bottom: 30px; 
-    width: 100%;
+    position: absolute; /* Para superponer los botones sobre la imagen */
+    top: 50%; /* Centra verticalmente */
+    left: 30px; /* Alinea a la izquierda */
+    transform: translateY(-50%); /* Ajusta la posición vertical para centrar */
     display: flex;
-    justify-content: flex-start; /* Alineamos los botones a la izquierda */
-    gap: 20px;  /* Separación entre los botones */
-    padding-left: 30px; /* Espaciado a la izquierda */
+    flex-direction: column; /* Alinea los botones en columna */
+    gap: 20px; /* Espacio entre los botones */
 }
 
-.button-mayor {
+.button-mayor, .button-menor {
     padding: 15px 25px; /* Ajuste de padding */
-    background-color: #ff0099;
-    color: white;
-    text-decoration: none;
+    color: white; /* Color del texto del botón mayor */
+    text-decoration: none; /* Quitamos el subrayado */
     font-size: 18px;
     border-radius: 50px;
     border: none;
-    transition: background-color 0.3s ease; /* Transición para hover */
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.button-mayor {
+    background-color: #ff0099; /* Color de fondo del botón mayor */
 }
 
 .button-menor {
-    padding: 15px 25px; /* Ajuste de padding */
-    background-color: transparent;
-    color: #ff0099;
-    text-decoration: none;
-    font-size: 18px;
-    border: 2px solid #ff0099;
-    border-radius: 50px;
-    transition: all 0.3s ease; /* Transición para hover */
+    background-color: transparent; /* Fondo transparente */
+    color: #ff0099; /* Color del texto del botón menor */
+    border: 2px solid #ff0099; /* Borde rosado */
 }
 
-.button-mayor:hover, .button-menor:hover {
-    opacity: 0.8;
+.button-mayor:hover {
+    background-color: #e60088; /* Cambio de color al hacer hover */
+}
+
+.button-menor:hover {
+    opacity: 0.8; /* Efecto de opacidad al hacer hover */
     transform: translateY(-2px); /* Pequeño efecto de elevación */
 }
 
 .content {
     padding: 50px;
     display: flex;
-    justify-content: flex-start; /* Alineamos a la izquierda */
-    align-items: center;
+    justify-content: center; /* Centramos horizontalmente */
+    align-items: center; /* Alineamos verticalmente */
     min-height: 100vh;
+    position: relative; /* Para poder alinear el formulario */
 }
 
 .form-container {
-    margin-left: 20px;
+    margin-left: 20px; /* Ajusta el margen según necesites */
+    display: flex;
+    flex-direction: column; /* Alineamos los campos de entrada en columna */
+    align-items: flex-start; /* Alineamos los campos a la izquierda */
 }
 
 form input {
     margin: 10px 0;
     padding: 10px;
-    width: 300px;
+    width: 300px; /* Ancho del campo de entrada */
     border-radius: 5px;
     border: 1px solid #ccc;
     font-size: 16px;
@@ -83,7 +89,8 @@ form button {
 }
 
 form button:hover {
-    background-color: #e60088;
+    background-color: #e60088; /* Cambio de color al hacer hover */
 }
+
 
 
