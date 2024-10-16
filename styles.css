@@ -24,7 +24,6 @@ body {
     gap: 20px; /* Espacio entre los botones */
 }
 
-
 .button-mayor, .button-menor {
     padding: 15px 25px; /* Ajuste de padding */
     color: white; /* Color del texto del botón mayor */
@@ -63,17 +62,7 @@ body {
     overflow: hidden; /* Para evitar el fondo blanco */
 }
 
-
 .background-image {
-    position: absolute; /* Para que se superponga */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh; /* Asegúrate de que la imagen ocupe toda la altura */
-    overflow: hidden; /* Evitar el scroll */
-}
-
-.background-image img {
     position: absolute; /* Para que se superponga */
     top: 0;
     left: 0;
@@ -89,6 +78,11 @@ body {
     align-items: flex-start; /* Alineamos los campos a la izquierda */
     position: relative; /* Para colocarla sobre la imagen */
     z-index: 1; /* Asegura que el formulario esté encima de la imagen */
+}
+
+form label {
+    margin-top: 10px;
+    font-weight: bold;
 }
 
 form input {
