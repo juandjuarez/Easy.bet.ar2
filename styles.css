@@ -53,13 +53,14 @@ body {
 }
 
 .content {
-    padding: 0; /* Sin padding para que la imagen ocupe toda la sección */
     display: flex;
-    flex-direction: column; /* Alineamos elementos verticalmente */
-    align-items: flex-start; /* Alineamos a la izquierda */
-    min-height: 100vh;
-    position: relative; /* Para poder alinear el formulario */
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Igual que la página 1 */
+    position: relative;
+    overflow: hidden; /* Para evitar el fondo blanco */
 }
+
 
 .background-image {
     position: absolute; /* Para que se superponga */
