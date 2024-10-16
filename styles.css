@@ -25,10 +25,10 @@ body {
 }
 
 .button-mayor, .button-menor {
-    padding: 1.5vw 2.5vw; /* Ajuste de padding usando unidades relativas */
+    padding: 1vw 2vw; /* Ajuste de padding usando unidades relativas */
     color: white; /* Color del texto del botón mayor */
     text-decoration: none; /* Quitamos el subrayado */
-    font-size: 1.8vw; /* Tamaño de fuente relativo */
+    font-size: 1.5vw; /* Tamaño de fuente relativo */
     border-radius: 50px;
     border: none;
     transition: background-color 0.3s ease; /* Transición suave */
@@ -113,9 +113,10 @@ form button:hover {
 /* Media Queries para ajustar en diferentes tamaños de pantalla */
 @media (max-width: 768px) {
     .button-mayor, .button-menor {
-        padding: 2vw 3vw; /* Ajuste de padding para pantallas más pequeñas */
-        font-size: 2.5vw; /* Tamaño de fuente relativo */
+        padding: 1.5vw 2.5vw; /* Ajuste de padding para pantallas más pequeñas */
+        font-size: 2vw; /* Tamaño de fuente relativo */
     }
+}
 
     form input {
         width: 80vw; /* Ancho del campo de entrada relativo */
