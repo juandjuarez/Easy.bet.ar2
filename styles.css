@@ -7,52 +7,56 @@ body {
 .hero {
     position: relative;
     display: flex;
-    justify-content: flex-start; /* Alinea los elementos a la izquierda */
-    align-items: flex-start; /* Alinea los elementos arriba */
+    justify-content: center; /* Centramos los elementos */
+    align-items: center; /* Alineamos los elementos verticalmente */
     height: 100vh;
     background-color: #f5f5f5;
+    text-align: center;
 }
 
 .button-container {
     position: absolute;
-    top: 50px;  /* Espacio desde arriba */
-    left: 50px; /* Espacio desde la izquierda */
-    text-align: center;
+    bottom: 30px;  /* Colocamos los botones debajo del texto easybet */
+    width: 100%;
+    display: flex;
+    justify-content: center;  /* Centramos los botones */
+    gap: 30px;  /* Separación entre los botones */
 }
 
-.button, .button-secondary {
+.button-mayor {
     padding: 15px 30px;
-    margin: 10px;
-    background-color: #FF99CC; /* Pink color */
+    background-color: #ff0099; /* Color de fondo del botón mayor de 18 */
     color: white;
     text-decoration: none;
     font-size: 18px;
-    border-radius: 5px;
-    display: inline-block;
+    border-radius: 50px; /* Borde redondeado */
+    border: none;
 }
 
-.button:hover {
-    background-color: #e68aac; /* Darker pink on hover */
+.button-menor {
+    padding: 15px 30px;
+    background-color: transparent; /* Fondo transparente */
+    color: #ff0099;
+    text-decoration: none;
+    font-size: 18px;
+    border: 2px solid #ff0099; /* Borde rosado */
+    border-radius: 50px;
 }
 
-.button-secondary {
-    background-color: #6c757d; /* Grey color */
-}
-
-.button-secondary:hover {
-    background-color: #5a6268; /* Darker grey on hover */
+.button-mayor:hover, .button-menor:hover {
+    opacity: 0.8;
 }
 
 .content {
     padding: 50px;
-    text-align: center;
+    display: flex;
+    justify-content: flex-start; /* Alineamos a la izquierda */
+    align-items: center; /* Centramos verticalmente */
+    min-height: 100vh;
 }
 
-form {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.form-container {
+    margin-left: 20px;  /* Alineamos un poco hacia la izquierda */
 }
 
 form input {
@@ -66,14 +70,15 @@ form input {
 
 form button {
     padding: 15px 30px;
-    background-color: #FF99CC;
+    background-color: #ff0099;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 50px;
     cursor: pointer;
 }
 
 form button:hover {
-    background-color: #e68aac;
+    background-color: #e60088;
 }
+
 
