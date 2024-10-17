@@ -10,7 +10,7 @@ body {
     display: flex;
     height: 100vh;
     background-image: url(fondo-1.png);
-    background-size: cover;
+    background-size: cover; /* Mantener el tamaño original */
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -18,20 +18,22 @@ body {
 .button-container {
     position: absolute;
     top: 50%;
-    left: 40px;
+    left: 80px; /* Mantener el ajuste a la derecha */
     transform: translateY(-50%);
     display: flex;
 }
 
 .button-mayor, .button-menor {
-    padding: .6vw 1.2vw;
-    font-size: .9vw;
+    padding: 0.6vw 1.2vw;
+    font-size: 1vw; /* Ajustar el tamaño de fuente */
     font-weight: 700;
     color: #fff;
     text-decoration: none;
     border-radius: 20px;
     border: none;
-    transition: background-color .3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    max-width: 150px; /* Limitar el ancho máximo */
+    flex-shrink: 0; /* Evitar que se encojan */
 }
 
 .button-mayor {
@@ -40,15 +42,16 @@ body {
 
 .button-menor {
     background-color: #639;
-    border: 2px solid #639;
+    border: 2px solid #cc297a;
 }
 
 .button-mayor:hover {
     background-color: #cc297a;
+    transform: translateY(-2px);
 }
 
 .button-menor:hover {
-    opacity: .8;
+    opacity: 0.8;
     transform: translateY(-2px);
 }
 
@@ -58,17 +61,7 @@ body {
     position: relative;
     overflow: hidden;
     background-image: url(fondo-2.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.background-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
+    background-size: cover; /* Asegurar que la imagen se ajuste correctamente */
     background-position: center;
     background-repeat: no-repeat;
 }
@@ -87,8 +80,9 @@ body {
 form input {
     margin: 1vh 0; /* Espacio entre los campos */
     padding: 1vh;
-    width: 25vw; /* Mantener el ancho de 25vw */
-    border-radius: 5px;
+    width: 100%; /* Usar el 100% del ancho disponible */
+    max-width: 400px; /* Limitar el ancho máximo */
+    border-radius: 10px;
     border: 3px solid #ffc0cb;
     background-color: #fff;
     font-size: 1vw;
@@ -108,8 +102,9 @@ form button {
     cursor: pointer;
     font-weight: 700;
     font-size: 1vw;
-    transition: background-color .3s ease;
-    width: 25vw; /* Igualar el ancho del botón con el de los campos del formulario */
+    transition: background-color 0.3s ease;
+    width: 100%; /* Igualar el ancho del botón con el de los campos del formulario */
+    max-width: 400px; /* Limitar el ancho máximo */
 }
 
 form button:hover {
@@ -121,20 +116,20 @@ form button:hover {
     bottom: 20px;
     right: 20px;
     width: 150px;
-    height: auto;
     z-index: 2;
 }
 
-/* Centrar "Registro exitoso" y el botón "Volver a inicio" a la izquierda */
 .success-message {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Alinear verticalmente los elementos */
     position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    text-align: left; /* Centrar alineado a la izquierda */
+    top: 50%; /* Mantener el centrado vertical */
+    left: 5%; /* Mantener la posición a la izquierda */
+    transform: translateY(-50%); /* Centrar verticalmente */
+    z-index: 1;
+    text-align: left; /* Alinear texto a la izquierda */
 }
+
 
 .success-message p, .success-message button {
     margin: 10px 0;
@@ -146,13 +141,8 @@ form button:hover {
         left: 2.5%;
     }
 
-    form input {
-        width: 85vw;
-        font-size: 4vw;
-    }
-
-    form button {
-        padding: 3vw 6vw;
+    form input, form button {
+        width: 85vw; /* Ajustar el ancho en móviles */
         font-size: 4vw;
     }
 
@@ -163,7 +153,7 @@ form button:hover {
 
     .button-container {
         top: 40%;
-        left: 40px; /* Mantener la posición de inicio */
+        left: 80px; /* Mantener el ajuste a la derecha en móviles */
     }
 
     .small-image {
@@ -171,7 +161,7 @@ form button:hover {
         bottom: 15px;
         right: 15px;
     }
-}
+
 
     
     
