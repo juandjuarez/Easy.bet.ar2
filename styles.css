@@ -1,173 +1,157 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', Arial, sans-serif;
-    overflow: hidden;
+margin:0;
+padding:0;
+font-family:'Poppins',Arial,sans-serif;
+overflow:hidden
 }
 
-/* Hero Section */
 .hero {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-image: url('fondo-1.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+position:relative;
+display:flex;
+height:100vh;
+background-image:url(fondo-1.png);
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat
 }
 
 .button-container {
-    position: absolute;
-    top: 50%;
-    left: 40px;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: row;
-    gap: 1vw;
+position:absolute;
+top:50%;
+left:40px;
+transform:translateY(-50%);
+display:flex
 }
 
-.button-mayor, .button-menor {
-    padding: 0.6vw 1.2vw;
-    font-size: 0.9vw;
-    font-weight: 700;
-    color: white;
-    text-decoration: none;
-    border-radius: 20px;
-    border: none;
-    transition: background-color 0.3s ease;
+.button-mayor,.button-menor {
+padding:.6vw 1.2vw;
+font-size:.9vw;
+font-weight:700;
+color:#fff;
+text-decoration:none;
+border-radius:20px;
+border:none;
+transition:background-color .3s ease
 }
 
 .button-mayor {
-    background-color: #FF3399;
+background-color:#F39
 }
 
 .button-menor {
-    background-color: #663399;
-    border: 2px solid #663399;
+background-color:#639;
+border:2px solid #639
 }
 
 .button-mayor:hover {
-    background-color: #cc297a;
+background-color:#cc297a
 }
 
 .button-menor:hover {
-    opacity: 0.8;
-    transform: translateY(-2px);
+opacity:.8;
+transform:translateY(-2px)
 }
 
-/* Content Section (Página 2) */
 .content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
-    background-image: url('fondo-2.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+display:flex;
+height:100vh;
+position:relative;
+overflow:hidden;
+background-image:url(fondo-2.png);
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat
 }
 
 .background-image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    object-fit: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100vh;
+background-position:center;
+background-repeat:no-repeat
 }
 
 .form-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    position: absolute;
-    top: 50%;
-    left: 5%;
-    width: 90%;
-    transform: translateY(-50%);
-    z-index: 1;
+display:flex;
+position:absolute;
+top:50%;
+left:5%;
+width:90%;
+transform:translateY(-50%);
+z-index:1
 }
 
 form input {
-    margin: 1vh 0;
-    padding: 1vh;
-    width: 30vw;
-    border-radius: 5px;
-    border: 3px solid pink;
-    background-color: white;
-    font-size: 1.2vw;
+margin:1vh 0;
+padding:1vh;
+width:30vw;
+border-radius:5px;
+border:3px solid #ffc0cb;
+background-color:#fff;
+font-size:1.2vw
 }
 
 form input::placeholder {
-    color: #ccc;
+color:#ccc
 }
 
 form button {
-    padding: 1.2vw 2.5vw;
-    background-color: #5E2D8A;
-    color: white;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 1vw;
-    transition: background-color 0.3s ease;
+padding:1.2vw 2.5vw;
+background-color:#5E2D8A;
+color:#fff;
+border:none;
+border-radius:50px;
+cursor:pointer;
+font-weight:700;
+font-size:1vw;
+transition:background-color .3s ease
 }
 
 form button:hover {
-    background-color: #4a1f6b;
+background-color:#4a1f6b
 }
 
-/* Imagen pequeña (logo) en la esquina inferior derecha */
 .small-image {
-    position: absolute;
-    bottom: 20px;  /* Separado del borde inferior */
-    right: 20px;   /* Separado del borde derecho */
-    width: 200px;   /* Tamaño ajustado de la imagen */
-    height: auto;  /* Mantener la proporción de la imagen */
-    z-index: 2;    /* Asegura que esté visible sobre otros elementos */
+position:absolute;
+bottom:20px;
+right:20px;
+width:200px;
+height:auto;
+z-index:2
 }
 
-/* Media Queries para móviles */
 @media (max-width: 768px) {
-    .form-container {
-        width: 95vw;
-        left: 2.5%;
-    }
+.form-container {
+width:95vw;
+left:2.5%
+}
 
-    form input {
-        width: 85vw;
-        font-size: 4vw;
-    }
+form input {
+width:85vw;
+font-size:4vw
+}
 
-    form button {
-        padding: 3vw 6vw;
-        font-size: 4vw;
-    }
+form button {
+padding:3vw 6vw;
+font-size:4vw
+}
 
-    .button-mayor, .button-menor {
-        padding: 2vw 4vw;
-        font-size: 3.5vw;
-    }
+.button-mayor,.button-menor {
+padding:2vw 4vw;
+font-size:3.5vw
+}
 
-    .button-container {
-        flex-direction: column;
-        gap: 3vw;
-        top: 40%;
-    }
+.button-container {
+top:40%
+}
 
-    /* Ajuste de la imagen pequeña en móviles */
-    .small-image {
-        width: 40px;
-        bottom: 15px;
-        right: 15px;
-    }
+.small-image {
+width:40px;
+bottom:15px;
+right:15px
+}
 }
 
 
