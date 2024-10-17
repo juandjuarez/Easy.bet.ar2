@@ -1,30 +1,35 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const db = require('./db'); // Asegúrate de que este archivo esté configurado para la conexión a la base de datos
+const db = require('./db'); // Asegúrate de que este archivo esté configurado correctamente para la base de datos
 const cors = require('cors');
 
-// Inicializar la aplicación
+// Inicializar la aplicación de Express
 const app = express();
-const port = process.env.PORT || 3000; // Usar el puerto de Railway o 3000 como fallback
+const port = process.env.PORT || 3000; // Usar el puerto configurado o el puerto 3000 por defecto
 
-// Configurar CORS antes de cualquier ruta
+// Configuración de CORS para permitir solicitudes desde cualquier origen
 app.use(cors());
 
-// Configurar body-parser para manejar datos del formulario
+// Configuración de body-parser para manejar solicitudes con datos en el cuerpo (formulario, JSON)
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-// Verificar la variable de entorno para la conexión
+// Verificación de la conexión a la base de datos usando variables de entorno
 console.log('Conectando a la base de datos en:', process.env.DATABASE_URL);
 
-// Ruta principal
+// Ruta principal para verificar si el servidor está corriendo
 app.get('/', (req, res) => {
     res.send('EasyBet pre-registro');
 });
 
-// Ruta para recibir datos del formulario
+// Ruta para manejar la recepción de datos del formulario y guardarlos en la base de datos
 app.post('/submit', (req, res) => {
     const { nombre, email, telefono } = req.body;
+
+    // Validar los campos requeridos
+    if (!nombre || !email || !telefono) {
+        return res.status(400).send('Todos los campos son obligatorios.');
+    }
 
     // Insertar los datos en la base de datos
     const query = 'INSERT INTO usuarios (nombre, email, telefono) VALUES (?, ?, ?)';
@@ -38,28 +43,8 @@ app.post('/submit', (req, res) => {
     });
 });
 
-// Iniciar el servidor
+// Iniciar el servidor en el puerto especificado
 app.listen(port, () => {
     console.log(`Servidor corriendo en: ${process.env.DATABASE_PUBLIC_URL || `http://localhost:${port}`}`);
 });
 
-// Aquí comienza el código del lado del cliente para ajustar las imágenes según la densidad de píxeles
-// Detectar la densidad de píxeles de la pantalla (DPR)
-window.addEventListener('DOMContentLoaded', () => {
-    const pixelRatio = window.devicePixelRatio || 1;
-
-    // Cambiar la imagen de fondo según la densidad de píxeles
-    const heroSection = document.querySelector('.hero');
-    const contentSection = document.querySelector('.content');
-
-    if (pixelRatio > 1) {
-        heroSection.style.backgroundImage = "url('fondo-1-alta-resolucion.png')";
-        contentSection.style.backgroundImage = "url('fondo-2-alta-resolucion.png')";
-    } else {
-        heroSection.style.backgroundImage = "url('fondo-1-baja-resolucion.png')";
-        contentSection.style.backgroundImage = "url('fondo-2-baja-resolucion.png')";
-    }
-
-    // Opcional: Puedes ajustar más estilos basados en la densidad
-    console.log(`Densidad de píxeles: ${pixelRatio}`);
-});
