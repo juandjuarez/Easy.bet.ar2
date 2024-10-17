@@ -4,23 +4,25 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', Arial, sans-serif; 
+    font-family: 'Poppins', Arial, sans-serif;
     overflow: hidden;
 }
 
+/* Hero Section */
 .hero {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('fondo-1.png'); 
+    background-image: url('fondo-1.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: fixed; /* Paralaje para pantallas grandes */
 }
 
+/* Botones */
 .button-container {
     position: absolute;
     top: 50%;
@@ -33,7 +35,7 @@ body {
 
 .button-mayor, .button-menor {
     padding: 0.6vw 1.2vw;
-    font-size: 0.9vw; /* Aumenté un poco el tamaño de la fuente */
+    font-size: 0.9vw;
     font-weight: 700; /* Negrita */
     font-family: 'Poppins', Arial, sans-serif; /* Usamos la fuente Poppins */
     color: white;
@@ -61,7 +63,7 @@ body {
     transform: translateY(-2px);
 }
 
-
+/* Content Section */
 .content {
     display: flex;
     justify-content: center;
@@ -69,13 +71,14 @@ body {
     height: 100vh;
     position: relative;
     overflow: hidden;
-    background-image: url('fondo-2.png'); 
+    background-image: url('fondo-2.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: fixed; /* Paralaje */
 }
 
+/* Fondo responsivo */
 .background-image {
     position: absolute;
     top: 0;
@@ -87,6 +90,7 @@ body {
     background-repeat: no-repeat;
 }
 
+/* Formulario */
 .form-container {
     display: flex;
     flex-direction: column;
@@ -107,7 +111,7 @@ form input {
     border: 3px solid pink;
     background-color: white;
     font-size: 1.2vw;
-    font-family: 'Poppins', Arial, sans-serif; /* Fuente para los inputs */
+    font-family: 'Poppins', Arial, sans-serif;
 }
 
 form input::placeholder {
@@ -122,7 +126,7 @@ form button {
     border-radius: 50px;
     cursor: pointer;
     font-weight: 700; /* Negrita para el botón */
-    font-family: 'Poppins', Arial, sans-serif; /* Fuente Poppins */
+    font-family: 'Poppins', Arial, sans-serif;
     font-size: 1vw;
     transition: background-color 0.3s ease;
 }
@@ -135,9 +139,9 @@ form button:hover {
 @media (max-width: 768px) {
     .hero {
         background-image: url('fondo-1.png');
-        background-size: contain;
+        background-size: contain; /* Para pantallas pequeñas */
         background-position: center;
-        background-attachment: scroll;
+        background-attachment: scroll; /* Sin paralaje en móviles */
     }
 
     .content {
@@ -173,6 +177,7 @@ form button:hover {
         top: 40%;
     }
 }
+
 
 
 
