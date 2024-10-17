@@ -1,6 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const db = require('./db'); // Asegúrate de que este archivo esté configurado para la conexión a la base de datos
+const db = require('./db'); 
 
 const app = express();
 const port = 3000;
