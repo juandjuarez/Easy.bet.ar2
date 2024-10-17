@@ -1,9 +1,9 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const db = require('./db'); 
+const db = require('./db'); // Asegúrate de que este archivo esté configurado para la conexión a la base de datos
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000; // Usar el puerto de Railway o 3000 como fallback
 
 // Configurar body-parser para manejar datos del formulario
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -32,6 +32,12 @@ app.post('/submit', (req, res) => {
         res.send('¡Registro exitoso!');
     });
 });
+
+// Iniciar el servidor
+app.listen(port, () => {
+    console.log(`Servidor corriendo en: ${process.env.DATABASE_PUBLIC_URL || `http://localhost:${port}`}`);
+});
+
 
 // Iniciar el servidor
 app.listen(port, () => {
