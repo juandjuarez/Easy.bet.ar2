@@ -1,7 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const db = require('./db'); // Asegúrate de que este archivo esté configurado para la conexión a la base de datos
-
+const cors = require('cors');
+app.use(cors()));
 const app = express();
 const port = process.env.PORT || 3000; // Usar el puerto de Railway o 3000 como fallback
 
