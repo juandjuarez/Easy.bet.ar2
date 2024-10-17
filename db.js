@@ -1,12 +1,11 @@
 const { Pool } = require('pg');
 
-// Crea una conexión a la base de datos utilizando la configuración adecuada
+// Crea una conexión a la base de datos utilizando la variable de entorno
 const pool = new Pool({
-    host: 'postgres.railway.internal', // Host para la conexión
-    port: 5432, // Puerto por defecto de PostgreSQL
-    user: process.env.PGUSER, // Usuario de la base de datos
-    password: process.env.POSTGRES_PASSWORD, // Contraseña de la base de datos
-    database: process.env.PGDATABASE, // Nombre de la base de datos
+    connectionString: process.env.DATABASE_URL, // Usa la variable de entorno para la conexión
+    ssl: {
+        rejectUnauthorized: false, // Para evitar problemas de certificado en producción
+    },
 });
 
 // Manejo de la conexión
@@ -22,4 +21,3 @@ pool.connect((err) => {
 module.exports = {
     query: (text, params) => pool.query(text, params),
 };
-
