@@ -2,85 +2,85 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    overflow: hidden; /* Evitar desplazamiento en la página */
+    overflow: hidden;
 }
 
 .hero {
     position: relative;
     display: flex;
-    justify-content: center; /* Centramos los elementos horizontalmente */
-    align-items: center; /* Alineamos los elementos verticalmente */
+    justify-content: center;
+    align-items: center;
     height: 100vh;
     background-color: #f5f5f5;
 }
 
 .button-container {
-    position: absolute; /* Para superponer los botones sobre la imagen */
-    top: 50%; /* Centra verticalmente */
-    left: 30px; /* Alinea a la izquierda */
-    transform: translateY(-50%); /* Ajusta la posición vertical para centrar */
-    display: flex; /* Mantiene el uso de flexbox */
-    flex-direction: row; /* Asegura que los botones estén uno al lado del otro */
-    gap: 1vw; /* Espacio entre los botones */
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
 }
 
 .button-mayor, .button-menor {
-    padding: 0.6vw 1.2vw; /* Ajuste de padding usando unidades relativas más pequeñas */
-    font-size: 1vw; /* Tamaño de fuente más pequeño */
-    color: white; /* Color del texto del botón mayor */
-    text-decoration: none; /* Quitamos el subrayado */
-    border-radius: 50px;
+    padding: 0.6vw 1.2vw;
+    font-size: 0.8vw;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
     border: none;
-    transition: background-color 0.3s ease; /* Transición suave */
+    transition: background-color 0.3s ease;
 }
 
 .button-mayor {
-    background-color: #FF3399; /* Nuevo color para el botón mayor */
+    background-color: #FF3399;
 }
 
 .button-menor {
-    background-color: #2E2A7B; /* Color PANTONE 275 C */
-    color: white; /* Color del texto del botón menor */
-    border: 2px solid #2E2A7B; /* Borde del color menor */
+    background-color: #663399;
+    border: 2px solid #663399;
 }
 
 .button-mayor:hover {
-    background-color: #cc297a; /* Cambio de color al hacer hover */
+    background-color: #cc297a;
 }
 
 .button-menor:hover {
-    opacity: 0.8; /* Efecto de opacidad al hacer hover */
-    transform: translateY(-2px); /* Pequeño efecto de elevación */
+    opacity: 0.8;
+    transform: translateY(-2px);
 }
 
 .content {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Igual que la página */
+    height: 100vh;
     position: relative;
-    overflow: hidden; /* Para evitar el fondo blanco */
+    overflow: hidden;
 }
 
 .background-image {
-    position: absolute; /* Para que se superponga */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh; /* Asegúrate de que la imagen ocupe toda la altura */
-    overflow: hidden; /* Evitar el scroll */
+    height: 100vh;
+    object-fit: cover;
+    overflow: hidden;
 }
 
 .form-container {
     display: flex;
-    flex-direction: column; /* Alineamos los campos de entrada en columna */
-    align-items: flex-start; /* Alineamos los campos a la izquierda */
-    position: absolute; /* Para colocarla sobre la imagen */
-    top: 50%; /* Centra verticalmente */
-    left: 5%; /* Ajusta la alineación a la izquierda para que no se salga */
-    width: 90%; /* Asegura que el formulario no ocupe todo el ancho */
-    transform: translateY(-50%); /* Ajusta la posición vertical para centrar */
-    z-index: 1; /* Asegura que el formulario esté encima de la imagen */
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    width: 90%;
+    transform: translateY(-50%);
+    z-index: 1;
 }
 
 form label {
@@ -91,45 +91,52 @@ form label {
 form input {
     margin: 1vh 0;
     padding: 1vh;
-    width: 30vw; /* Ancho del campo de entrada relativo */
+    width: 30vw;
     border-radius: 5px;
     border: 1px solid #ccc;
-    font-size: 1.2vw; /* Tamaño de fuente relativo */
+    font-size: 1.2vw;
 }
 
 form button {
     padding: 1.2vw 2.5vw;
-    background-color: #5E2D8A; /* Color PANTONE 266 C */
+    background-color: #5E2D8A;
     color: white;
     border: none;
     border-radius: 50px;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Transición para hover */
+    transition: background-color 0.3s ease;
 }
 
 form button:hover {
-    background-color: #4a1f6b; /* Cambio de color al hacer hover */
+    background-color: #4a1f6b;
 }
 
-/* Media Queries para ajustar en diferentes tamaños de pantalla */
-@media (max-width: 768px) {
-    .button-mayor, .button-menor {
-        padding: 1.2vw 2vw; /* Ajuste de padding para pantallas más pequeñas */
-        font-size: 1.6vw; /* Tamaño de fuente relativo ajustado */
-    }
-
+/* Ajustes para pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
     .form-container {
-        left: 10px; /* Más margen para pantallas pequeñas */
-        width: 90vw; /* Asegura que el formulario se ajuste bien */
+        width: 95vw; /* Para que el formulario se ajuste a casi todo el ancho */
+        left: 2.5%; /* Alineación centrada en móviles */
     }
 
     form input {
-        width: 90vw; /* Ancho más ajustado en pantallas pequeñas */
+        width: 85vw; /* Hacer que los campos se ajusten al tamaño del móvil */
+        font-size: 4vw; /* Fuente más pequeña para móviles */
     }
 
     form button {
+        padding: 3vw 6vw; /* Botones más grandes para móviles */
+        font-size: 4vw; /* Ajustar tamaño de fuente */
+    }
+
+    .button-mayor, .button-menor {
         padding: 2vw 4vw;
-        font-size: 2vw; /* Tamaño de fuente relativo */
+        font-size: 3.5vw; /* Botones más grandes en móviles */
+    }
+
+    .button-container {
+        flex-direction: column; /* Botones uno debajo del otro */
+        gap: 3vw; /* Espaciado mayor entre botones */
+        top: 40%; /* Ajuste de posición vertical para móviles */
     }
 }
 
