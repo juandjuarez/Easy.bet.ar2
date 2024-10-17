@@ -67,8 +67,9 @@ body {
     left: 0;
     width: 100%;
     height: 100vh;
-    object-fit: cover;
-    overflow: hidden;
+    object-fit: cover; /* Mantiene la proporción de la imagen */
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .form-container {
@@ -80,21 +81,21 @@ body {
     left: 5%;
     width: 90%;
     transform: translateY(-50%);
-    z-index: 1;
-}
-
-form label {
-    margin-top: 1vh;
-    font-weight: bold;
+    z-index: 1; /* Mantiene el formulario encima de la imagen de fondo */
 }
 
 form input {
     margin: 1vh 0;
     padding: 1vh;
-    width: 30vw;
+    width: 30vw; /* Mantiene el tamaño original */
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 3px solid pink; /* Bordes rosas */
+    background-color: white; /* Fondo blanco */
     font-size: 1.2vw;
+}
+
+form input::placeholder { /* Estilo para el texto del placeholder */
+    color: #ccc; /* Color del placeholder */
 }
 
 form button {
@@ -139,7 +140,6 @@ form button:hover {
         top: 40%; /* Ajuste de posición vertical para móviles */
     }
 }
-
 
 
 
