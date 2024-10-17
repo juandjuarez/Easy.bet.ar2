@@ -1,8 +1,12 @@
 const { Pool } = require('pg');
 
-// Crea una conexión a la base de datos utilizando la variable de entorno
+// Crea una conexión a la base de datos utilizando la configuración adecuada
 const pool = new Pool({
-    connectionString: process.env.DATABASE_URL, // Usa la variable de entorno aquí
+    host: 'postgres.railway.internal', // Host para la conexión
+    port: 5432, // Puerto por defecto de PostgreSQL
+    user: process.env.PGUSER, // Usuario de la base de datos
+    password: process.env.POSTGRES_PASSWORD, // Contraseña de la base de datos
+    database: process.env.PGDATABASE, // Nombre de la base de datos
 });
 
 // Manejo de la conexión
