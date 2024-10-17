@@ -1,7 +1,10 @@
+/* Importar la fuente Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', Arial, sans-serif; /* Usamos Poppins como fuente principal */
     overflow: hidden;
 }
 
@@ -12,6 +15,11 @@ body {
     align-items: center;
     height: 100vh;
     background-color: #f5f5f5;
+    background-image: url('img/fondo-1-large.jpg'); /* Imagen de alta resolución */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .button-container {
@@ -26,7 +34,9 @@ body {
 
 .button-mayor, .button-menor {
     padding: 0.6vw 1.2vw;
-    font-size: 0.8vw;
+    font-size: 0.9vw; /* Aumenté un poco el tamaño de la fuente */
+    font-weight: 700; /* Negrita */
+    font-family: 'Poppins', Arial, sans-serif; /* Usamos la fuente Poppins */
     color: white;
     text-decoration: none;
     border-radius: 4px;
@@ -52,6 +62,7 @@ body {
     transform: translateY(-2px);
 }
 
+/* Content Section */
 .content {
     display: flex;
     justify-content: center;
@@ -59,6 +70,11 @@ body {
     height: 100vh;
     position: relative;
     overflow: hidden;
+    background-image: url('img/fondo-2-large.jpg'); /* Imagen de alta resolución */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .background-image {
@@ -81,21 +97,22 @@ body {
     left: 5%;
     width: 90%;
     transform: translateY(-50%);
-    z-index: 1; /* Mantiene el formulario encima de la imagen de fondo */
+    z-index: 1;
 }
 
 form input {
     margin: 1vh 0;
     padding: 1vh;
-    width: 30vw; /* Mantiene el tamaño original */
+    width: 30vw;
     border-radius: 5px;
-    border: 3px solid pink; /* Bordes rosas */
-    background-color: white; /* Fondo blanco */
+    border: 3px solid pink;
+    background-color: white;
     font-size: 1.2vw;
+    font-family: 'Poppins', Arial, sans-serif; /* Fuente para los inputs */
 }
 
-form input::placeholder { /* Estilo para el texto del placeholder */
-    color: #ccc; /* Color del placeholder */
+form input::placeholder {
+    color: #ccc;
 }
 
 form button {
@@ -105,6 +122,9 @@ form button {
     border: none;
     border-radius: 50px;
     cursor: pointer;
+    font-weight: 700; /* Negrita para el botón */
+    font-family: 'Poppins', Arial, sans-serif; /* Fuente Poppins */
+    font-size: 1vw;
     transition: background-color 0.3s ease;
 }
 
@@ -112,34 +132,49 @@ form button:hover {
     background-color: #4a1f6b;
 }
 
-/* Ajustes para pantallas pequeñas (móviles) */
+/* Media Queries para móviles */
 @media (max-width: 480px) {
+    .hero {
+        background-image: url('img/fondo-1-small.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: scroll;
+    }
+
+    .content {
+        background-image: url('img/fondo-2-small.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: scroll;
+    }
+
     .form-container {
-        width: 95vw; /* Para que el formulario se ajuste a casi todo el ancho */
-        left: 2.5%; /* Alineación centrada en móviles */
+        width: 95vw;
+        left: 2.5%;
     }
 
     form input {
-        width: 85vw; /* Hacer que los campos se ajusten al tamaño del móvil */
-        font-size: 4vw; /* Fuente más pequeña para móviles */
+        width: 85vw;
+        font-size: 4vw;
     }
 
     form button {
-        padding: 3vw 6vw; /* Botones más grandes para móviles */
-        font-size: 4vw; /* Ajustar tamaño de fuente */
+        padding: 3vw 6vw;
+        font-size: 4vw;
     }
 
     .button-mayor, .button-menor {
         padding: 2vw 4vw;
-        font-size: 3.5vw; /* Botones más grandes en móviles */
+        font-size: 3.5vw;
     }
 
     .button-container {
-        flex-direction: column; /* Botones uno debajo del otro */
-        gap: 3vw; /* Espaciado mayor entre botones */
-        top: 40%; /* Ajuste de posición vertical para móviles */
+        flex-direction: column;
+        gap: 3vw;
+        top: 40%;
     }
 }
+
 
 
 
