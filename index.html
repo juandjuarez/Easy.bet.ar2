@@ -20,7 +20,7 @@
     <!-- Section 2 - Main Content with form (oculto por defecto) -->
     <section id="page2" class="content" style="display: none;">
         <img src="fondo-2.png" alt="Landing Page Section 2" class="background-image">
-        <form action="/submit" method="POST" class="form-container">
+        <form id="myForm" class="form-container">
             <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
             <input type="email" id="email" name="email" placeholder="E-mail" required>
             <input type="tel" id="telefono" name="telefono" placeholder="Contacto +54" required>
@@ -39,6 +39,42 @@
     </section>
 
     <script>
+        const sheetId = '1z6iOzhM_YhMG0_bSPvkQX8ouAjgO5yUiIlxO4Zs1Cf8'; // Reemplaza con tu ID de Google Sheet
+        const apiKey = 'AIzaSyAHSMUwPqroN1sA5_2XCcVjEbdxlmw5U48'; // Reemplaza con tu clave API
+
+        document.getElementById('myForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita que el formulario se envíe de forma tradicional
+
+            const nombre = document.getElementById('nombre').value;
+            const email = document.getElementById('email').value;
+            const telefono = document.getElementById('telefono').value;
+
+            // Define los datos a enviar
+            const data = {
+                range: 'Sheet1!A1:C1', // Ajusta el rango según tus necesidades
+                majorDimension: 'ROWS',
+                values: [[nombre, email, telefono]] // Los datos que se van a agregar
+            };
+
+            // Envía la solicitud POST
+            fetch(`https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/Sheet1:append?valueInputOption=USER_ENTERED&key=${apiKey}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(result => {
+                console.log('Success:', result);
+                mostrarConfirmacion(); // Muestra la página de confirmación
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Hubo un error al guardar los datos.');
+            });
+        });
+
         function mostrarPagina2() {
             document.getElementById('page1').style.display = 'none';
             document.getElementById('page2').style.display = 'block';
@@ -51,6 +87,5 @@
     </script>
 </body>
 </html>
-
 
 
