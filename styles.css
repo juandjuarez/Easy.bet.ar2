@@ -129,7 +129,7 @@ form button:hover {
     position: absolute;
     bottom: 20px;  /* Separado del borde inferior */
     right: 20px;   /* Separado del borde derecho */
-    width: 100px;   /* Tamaño ajustado de la imagen */
+    width: 200px;   /* Tamaño ajustado de la imagen */
     height: auto;  /* Mantener la proporción de la imagen */
     z-index: 2;    /* Asegura que esté visible sobre otros elementos */
 }
