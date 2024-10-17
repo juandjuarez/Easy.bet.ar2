@@ -1,15 +1,21 @@
-const mysql = require('mysql2');
+const { Pool } = require('pg');
 
-const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',  // Cambia esto si usas otro usuario
-    password: 'xxlirione94',  // Tu contraseña de MySQL
-    database: 'easybet_preregistro'
+// Crea una conexión a la base de datos utilizando la variable de entorno
+const pool = new Pool({
+    connectionString: process.env.DATABASE_URL, // Usa la variable de entorno aquí
 });
 
-connection.connect((err) => {
-    if (err) throw err;
-    console.log('Conectado a la base de datos MySQL');
+// Manejo de la conexión
+pool.connect((err) => {
+    if (err) {
+        console.error('Error al conectar a la base de datos PostgreSQL:', err);
+        throw err;
+    }
+    console.log('Conectado a la base de datos PostgreSQL');
 });
 
-module.exports = connection;
+// Exporta la función para hacer consultas
+module.exports = {
+    query: (text, params) => pool.query(text, params),
+};
+
