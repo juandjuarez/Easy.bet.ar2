@@ -22,9 +22,9 @@ app.post('/submit', (req, res) => {
     const { nombre, email, telefono } = req.body;
 
     // Insertar los datos en la base de datos
-    const query = 'INSERT INTO usuarios (nombre, email, telefono) VALUES ($1, $2, $3)';
+    const query = 'INSERT INTO usuarios (nombre, email, telefono) VALUES (?, ?, ?)';
     db.query(query, [nombre, email, telefono], (err, result) => {
-        if (err) {
+        if (err) throw err; 
             console.error('Error al guardar en la base de datos:', err);
             return res.status(500).send('Error al registrar los datos.');
         }
