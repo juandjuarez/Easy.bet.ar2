@@ -30,15 +30,15 @@ body {
 }
 
 .button-mayor, .button-menor {
-    padding: 0.6rem 1.2rem; /* Cambiado a rem para mejor control */
+    padding: 0.2rem 1.2rem; /* Cambiado a rem para mejor control */
     font-size: 1rem; /* Ajustar el tamaño de fuente */
     font-weight: 700;
     color: #fff;
     text-decoration: none;
-    border-radius: 20px;
+    border-radius: 60px;
     border: none;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    max-width: 150px; /* Limitar el ancho máximo */
+    max-width: 240px; /* Limitar el ancho máximo */
 }
 
 .button-mayor { background-color: #F39; }
@@ -161,5 +161,4 @@ form button:hover { background-color:#4a1f6b ; }
        margin-left :0 ; 
        text-align:left; /* Alinear texto a la izquierda en móviles también*/
    }
-}
 }
