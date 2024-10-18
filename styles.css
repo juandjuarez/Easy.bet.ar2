@@ -1,53 +1,44 @@
 * {
-    box-sizing: border-box;
+    box-sizing: border-box; /* Asegura que el padding y el borde no afecten el ancho total */
 }
 
 body {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', Arial, sans-serif;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Evitar el desplazamiento horizontal */
 }
 
 .hero {
     position: relative;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
+    align-items: flex-start; /* Alinea los elementos al inicio (izquierda) */
     height: 100vh;
-    background-image: url('1.png');
-    background-size: cover;
+    background-image: url('1.png'); /* Ruta a la imagen de fondo */
+    background-size: cover; /* Mantener el tamaño original */
     background-position: center;
     background-repeat: no-repeat;
-}
-
-.subscription-text {
-    position: absolute;
-    top: 20px;
-    left: 30px;
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
 }
 
 .button-container {
     position: absolute;
     top: 50%;
-    left: 80px;
+    left: 80px; /* Mantener el ajuste a la derecha */
     transform: translateY(-50%);
     display: flex;
 }
 
 .button-mayor, .button-menor {
-    padding: 0.6rem 1.2rem;
-    font-size: 1rem;
+    padding: 0.6rem 1.2rem; /* Cambiado a rem para mejor control */
+    font-size: 1rem; /* Ajustar el tamaño de fuente */
     font-weight: 700;
     color: #fff;
     text-decoration: none;
     border-radius: 20px;
     border: none;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    max-width: 150px;
+    max-width: 150px; /* Limitar el ancho máximo */
 }
 
 .button-mayor { background-color: #F39; }
@@ -60,15 +51,15 @@ body {
     height: 100vh;
     position: relative;
     overflow: hidden;
-    background-image: url('2.png');
-    background-size: cover;
+    background-image: url('2.png'); /* Ruta a la imagen de fondo */
+    background-size: cover; /* Asegurar que la imagen se ajuste correctamente */
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .form-container {
     display: flex; 
-    flex-direction: column; 
+    flex-direction: column; /* Alinear verticalmente los campos */ 
     position: absolute; 
     top: 50%; 
     left: 5%; 
@@ -78,58 +69,66 @@ body {
 }
 
 form input {
-    margin: 1vh 0; 
-    padding: 1rem; 
-    width: 100%; 
-    max-width: 400px; 
+    margin: 1vh 0; /* Espacio entre los campos */ 
+    padding: 1rem; /* Cambiado a rem para mejor control */
+    width: 100%; /* Usar el 100% del ancho disponible */ 
+    max-width: 400px; /* Limitar el ancho máximo */ 
     border-radius: 10px; 
     border: 3px solid #ffc0cb; 
     background-color: #fff; 
-    font-size: 1rem; 
+    font-size: 1rem; /* Cambiado a rem para mejor control */
 }
 
 form input::placeholder { color: #ccc; }
 form button {
-    padding: 1rem 2rem; 
+    padding: 1rem 2rem; /* Cambiado a rem para mejor control */
     background-color: #5E2D8A; 
     color: #fff; 
     border: none; 
     border-radius: 50px; 
     cursor: pointer; 
     font-weight: 700; 
-    font-size: 1rem; 
+    font-size: 1rem; /* Cambiado a rem para mejor control */
     transition: background-color 0.3s ease; 
-    width: 100%; 
-    max-width: 400px; 
+    width: 100%; /* Igualar el ancho del botón con el de los campos del formulario */ 
+    max-width: 400px; /* Limitar el ancho máximo */ 
 }
 
 form button:hover { background-color: #4a1f6b; }
 
 .image-container {
-    position: absolute; 
+    position: absolute; /* Permite posicionar las imágenes en relación a su contenedor */ 
     bottom: 20px; 
     right: 20px; 
+    display: flex; /* Usar flexbox para alinear las imágenes */ 
+}
+
+.small-image { width: 150px; /* Tamaño de la imagen Ludopatia */ margin-right: 10px; /* Espacio entre las imágenes */ }
+.loteria-image { width: 150px; /* Tamaño de la imagen Lotería */ }
+.logo-easybet { position: relative; top: 20px; left: 30px; width: 200px; } /* Nueva clase para la imagen easybet.png */
+
+.subscription-text {
+    position: relative;
+    color: lightpink;
+    font-size: 24px; /* Ajustado para que no sea tan grande */
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    margin-left: 30px;
+    text-align: center;
+}
+
+.subscription-text + .subscription-text { margin-top: 5px; }
+
+.success-message {
     display: flex; 
-}
-
-.small-image { width: 150px; margin-right: 10px; }
-.loteria-image { width: 150px; }
-.logo-easybet { position: relative; top: 20px; left: 30px; width: 200px; }
-
-.footer-text, .footer-text-small {
+    flex-direction: column;
     position: absolute;
-    bottom: 20px; 
-    left: 30px; 
-    color: white; 
-    font-size: 12px; 
-    text-align: left; 
-    max-width: 300px; 
-    line-height: 1.5; 
+    top: 50%;
+    left: 5%;
+    transform: translateY(-50%);
 }
 
-.footer-text-small {
-    font-size: 10px; /* Tamaño más pequeño para el texto adicional */
-}
+.success-message p, .success-message button { margin: 10px 0; }
 
 /* Media Queries para dispositivos móviles */
 @media (max-width: 768px) {
@@ -137,13 +136,13 @@ form button:hover { background-color: #4a1f6b; }
     
     form input, form button {
         width: 85vw;
-        font-size: 4vw; 
+        font-size: 4vw; /* Ajusta el tamaño de fuente con vw */
         padding: 1rem;
     }
 
     .button-mayor, .button-menor {
         padding: 1vw 2vw;
-        font-size: 2.5vw; 
+        font-size: 2.5vw; /* Reducir el tamaño de fuente */ 
     }
 
     .button-container { top: 40%; left: 5%; }
@@ -152,9 +151,8 @@ form button:hover { background-color: #4a1f6b; }
     .logo-easybet { width: 150px; }
     
     .subscription-text { 
-        font-size: 5vw; 
+        font-size: 5vw; /* Ajusta el tamaño de fuente para pantallas pequeñas */
         margin-left: 0; 
         text-align: center; 
     }
 }
-
