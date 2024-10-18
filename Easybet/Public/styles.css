@@ -9,7 +9,7 @@ body {
     position: relative;
     display: flex;
     height: 100vh;
-    background-image: url(1.png);
+    background-image: url(images/1.png); /* Ruta actualizada */
     background-size: cover; /* Mantener el tamaño original */
     background-position: center;
     background-repeat: no-repeat;
@@ -60,7 +60,7 @@ body {
     height: 100vh;
     position: relative;
     overflow: hidden;
-    background-image: url(2.png);
+    background-image: url(images/2.png); /* Ruta actualizada */
     background-size: cover; /* Asegurar que la imagen se ajuste correctamente */
     background-position: center;
     background-repeat: no-repeat;
@@ -86,7 +86,6 @@ form input {
     border: 3px solid #ffc0cb;
     background-color: #fff;
     font-size: 1vw;
-    display: block;
 }
 
 form input::placeholder {
@@ -112,72 +111,61 @@ form button:hover {
 }
 
 .small-image {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    width: 150px;
-    z-index: 2;
+   position:absolute; 
+   bottom :20px; 
+   right :20px; 
+   width :150px; 
+   z-index :2; 
+}
+
+.loteria-image { /* Nueva clase para la imagen loteria.png */
+   position:absolute; 
+   bottom :20px; 
+   left :20px; 
+   width :150px; 
+   z-index :2; 
 }
 
 .success-message {
-    display: flex;
-    flex-direction: column; /* Alinear verticalmente los elementos */
-    position: absolute;
-    top: 50%; /* Mantener el centrado vertical */
-    left: 5%; /* Mantener la posición a la izquierda */
-    transform: translateY(-50%); /* Centrar verticalmente */
-    z-index: 1;
-    text-align: left; /* Alinear texto a la izquierda */
+   display:flex; 
+   flex-direction :column; /* Alinear verticalmente los elementos */ 
+   position:absolute; 
+   top :50%; /* Mantener el centrado vertical */ 
+   left :5%; /* Mantener la posición a la izquierda */ 
+   transform :translateY(-50%); /* Centrar verticalmente */ 
+   z-index :1; 
+   text-align:left; /* Alinear texto a la izquierda */ 
 }
-
 
 .success-message p, .success-message button {
-    margin: 10px 0;
+   margin :10px 0; 
 }
 
-@media (max-width: 768px) {
-    .form-container {
-        width: 95vw;
-        left: 2.5%;
-    }
-    form input, form button {
-        width: 85vw; /* Ajustar el ancho en móviles */
-        font-size: 4vw;
-    }
+/* Media Queries para dispositivos móviles */
+@media (max-width :768px) {
+   .form-container {
+       width :95vw; 
+       left :2.5%; 
+   }
+   
+   form input, form button {
+       width :85vw; /* Ajustar el ancho en móviles */ 
+       font-size :4vw; 
+   }
 
-    .button-mayor, .button-menor {
-        padding: 1vw 2vw; /* Limitar el crecimiento de padding en pantallas pequeñas */
-        font-size: 2.5vw; /* Reducir el tamaño de fuente */
-    }
+   .button-mayor, .button-menor {
+       padding :1vw 2vw; /* Limitar el crecimiento de padding en pantallas pequeñas */ 
+       font-size :2.5vw; /* Reducir el tamaño de fuente */ 
+   }
 
-    .button-container {
-        top: 40%;
-        left: 80px; /* Mantener el ajuste a la derecha en móviles */
-    }
+   .button-container {
+       top :40%; 
+       left :80px; /* Mantener el ajuste a la derecha en móviles */ 
+   }
 
-    .small-image {
-        width: 0px;
-        bottom: 15px;
-        right: 15px;
-    }
-
-    form input, form button {
-        width: 85vw; /* Ajustar el ancho en móviles */
-        font-size: 4vw;
-    }
-
-    .button-mayor, .button-menor {
-        padding: 1vw 2vw; /* Limitar el crecimiento de padding en pantallas pequeñas */
-        font-size: 2.5vw; /* Reducir el tamaño de fuente */
-    }
-
-    .button-container {
-        top: 40%;
-        left: 80px; /* Mantener el ajuste a la derecha en móviles */
-    }
-
-    .small-image {
-        width: 40px;
-        bottom: 15px;
-        right: 15px;
-    }
+   .small-image {
+       width :40px; 
+       bottom :15px; 
+       right :15px; 
+   }
+}
