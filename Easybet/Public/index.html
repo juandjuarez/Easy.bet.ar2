@@ -54,7 +54,8 @@
             <div class="success-message">
                 <h1>¡Registro Exitoso!</h1>
                 <p>Gracias por registrarte en EasyBet. Te contactaremos pronto.</p>
-                <a href="/" class="button-mayor">Volver al inicio</a>
+                <!-- Cambié el enlace para usar la función mostrarPagina1() -->
+                <a href="javascript:void(0);" onclick="mostrarPagina1()" class="button-mayor">Volver al inicio</a>
             </div>
         </section>
     </main>
@@ -118,6 +119,12 @@
         function mostrarConfirmacion() {
             document.getElementById('page2').style.display = 'none';
             document.getElementById('confirmacion').style.display = 'block';
+        }
+
+        // Función para volver al inicio (Página 1)
+        function mostrarPagina1() {
+            document.getElementById('confirmacion').style.display = 'none';
+            document.getElementById('page1').style.display = 'block';
         }
     </script>
 </body>
