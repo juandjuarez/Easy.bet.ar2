@@ -21,6 +21,17 @@ body {
     background-repeat: no-repeat;
 }
 
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Alinear a la derecha */
+    margin-right: 30px; /* Espacio a la derecha */
+}
+
+.subscription-container {
+    text-align: right; /* Alinear el texto a la derecha */
+}
+
 .button-container {
     position: absolute;
     top: 50%;
@@ -69,7 +80,7 @@ body {
 }
 
 form input {
-    margin: 1vh 0; 
+    margin: 1vh 0;
     padding: 1rem; 
     width: 100%; 
     max-width: 400px; 
@@ -105,7 +116,7 @@ form button:hover { background-color: #4a1f6b; }
 
 .small-image { width: 150px; margin-right: 10px; }
 .loteria-image { width: 150px; }
-.logo-easybet { position: relative; top: 20px; left: 30px; width: 200px; }
+.logo-easybet { position: relative; width: 200px; }
 
 .subscription-text {
     position: relative;
@@ -130,7 +141,18 @@ form button:hover { background-color: #4a1f6b; }
 
 .success-message p, .success-message button { margin: 10px 0; }
 
-/* Media Queries */
+/* Nuevo texto en la segunda página */
+.footer-text {
+    position: absolute;
+    bottom: 20px; 
+    left: 30px; 
+    color: white; 
+    font-size: 12px; /* Texto más pequeño */
+    text-align: left; 
+    max-width: 300px; /* Ajustar ancho máximo */
+}
+
+/* Media Queries para dispositivos móviles */
 @media (max-width: 768px) {
     .form-container { width: 95vw; left: 2.5%; }
     
@@ -155,5 +177,8 @@ form button:hover { background-color: #4a1f6b; }
         margin-left: 0; 
         text-align: center; 
     }
+
+    .footer-text { font-size: 10px; } /* Ajuste para el texto en móviles */
 }
+
 
