@@ -12,7 +12,7 @@
     <header>
         <section id="page1" class="hero">
             <!-- Imagen EasyBet añadida aquí -->
-            <img src="Easybet.png" alt="Logo EasyBet" class="logo-easybet"> <!-- Nueva imagen añadida -->
+            <img src="Easybet.png" alt="Logo EasyBet" class="logo-easybet">
 
             <div class="button-container">
                 <a href="javascript:void(0);" onclick="mostrarPagina2()" class="button-mayor">SOY MAYOR DE 18 AÑOS</a>
@@ -28,60 +28,64 @@
 
     <main>
         <section id="page2" class="content" style="display: none;">
-            <!-- Imagen EasyBet también aquí -->
-            <img src="Easybet.png" alt="Logo EasyBet" class="logo-easybet"> <!-- Nueva imagen añadida -->
+            <img src="Easybet.png" alt="Logo EasyBet" class="logo-easybet">
             <p class="subscription-text">¡SUSCRIBITE AHORA Y GANA</p>
             <p class="subscription-text">CON LOS BONOS DE BIENVENIDA</p>
             <p class="subscription-text">MÁS GRANDES DE ARGENTINA!</p>
 
             <div class="background-image" style="background-image: url('2.png');"></div>
+
+            <!-- Formulario de suscripción -->
             <form id="myForm" class="form-container">
                 <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
                 <input type="email" id="email" name="email" placeholder="E-mail" required>
                 <input type="tel" id="telefono" name="telefono" placeholder="Contacto +54" required>
-                <button type="submit" class="button-mayor">Suscribirme</button>
+                <button type="submit" class='button-mayor'>Suscribirme</button>
             </form>
 
-            <div class="image-container">
-                <!-- Intercambiamos las posiciones de las imágenes aquí -->
-                <a href="https://www.loteria.gba.gov.ar/" target="_blank">
-                    <img src="Loteria.png" alt="Logo Lotería" class="loteria-image"> <!-- Lotería ahora primero -->
+            <!-- Contenedor de imágenes -->
+            <div class='image-container'>
+                <a href='https://www.loteria.gba.gov.ar/' target='_blank'>
+                    <img src='Loteria.png' alt='Logo Lotería' class='loteria-image'>
                 </a>
-                <a href="https://www.loteria.gba.gov.ar/index.php/133-juego-responsable" target="_blank">
-                    <img src="Ludopatia.jpg" alt="Logo Ludopatía" class="small-image"> <!-- Ludopatía ahora segundo -->
+                <a href='https://www.loteria.gba.gov.ar/index.php/133-juego-responsable' target='_blank'>
+                    <img src='Ludopatia.jpg' alt='Logo Ludopatía' class='small-image'>
                 </a>
             </div>
 
+            <!-- Nueva imagen añadida -->
+            <img src='recurso2.png' alt='Recurso Adicional' class='recurso-image'> <!-- Imagen adicional -->
+
         </section>
 
-        <section id="confirmacion" class="content" style="display: none;">
-            <img src="Easybet.png" alt="Logo EasyBet" class="logo-easybet">
-            <div class="success-message">
+        <section id='confirmacion' class='content' style='display: none;'>
+            <img src='Easybet.png' alt='Logo EasyBet' class='logo-easybet'>
+            <div class='success-message'>
                 <h1>¡Registro Exitoso!</h1>
                 <p>Gracias por registrarte en EasyBet. Te contactaremos pronto.</p>
-                <a href="javascript:void(0);" onclick="mostrarPagina1()" class="button-mayor">Volver al inicio</a>
+                <a href='#' onclick='mostrarPagina1()' class='button-mayor'>Volver al inicio</a>
             </div>
         </section>
     </main>
 
-    <script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
-    <script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
-
+    <!-- Script para manejar el envío del formulario -->
     <script>
-        // Evento para manejar el envío del formulario
         document.getElementById('myForm').addEventListener('submit', function(event) {
             event.preventDefault(); // Evita el envío tradicional
 
-            const nombre = document.getElementById('nombre').value;
-            const email = document.getElementById('email').value;
-            const telefono = document.getElementById('telefono').value;
+            const nombre = document.getElementById('nombre').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const telefono = document.getElementById('telefono').value.trim();
+
+            if (!nombre || !email || !telefono) {
+                alert('Por favor, completa todos los campos.');
+                return;
+            }
 
             // Enviar datos al servidor
             fetch('/guardar-datos', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ nombre, email, telefono })
             })
             .then(response => {
