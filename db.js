@@ -8,16 +8,18 @@ const pool = new Pool({
     },
 });
 
-// Manejo de la conexión
-pool.connect((err) => {
-    if (err) {
-        console.error('Error al conectar a la base de datos PostgreSQL:', err);
-        throw err;
+// Función para ejecutar consultas con manejo de errores
+const query = async (text, params) => {
+    try {
+        const res = await pool.query(text, params);
+        return res; // Devuelve los resultados de la consulta
+    } catch (error) {
+        console.error('Error en la consulta a la base de datos:', error.message);
+        throw error; // Lanza el error para manejarlo más adelante
     }
-    console.log('Conectado a la base de datos PostgreSQL');
-});
+};
 
-// Exporta la función para hacer consultas
+// Exporta la función de consulta
 module.exports = {
-    query: (text, params) => pool.query(text, params),
+    query,
 };
