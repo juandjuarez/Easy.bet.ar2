@@ -5,19 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EasyBet</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js" defer></script>
+    <link rel="stylesheet" href="styles.css"> <!-- Ruta al CSS -->
+    <script src="scripts.js" defer></script> <!-- Ruta al JavaScript -->
 </head>
 <body>
     <header>
         <section id="page1" class="hero">
             <img src="images/easybet.png" alt="Logo EasyBet" class="logo-easybet">
-
             <div class="button-container">
                 <a href="javascript:void(0);" onclick="mostrarPagina2()" class="button-mayor">SOY MAYOR DE 18 AÑOS</a>
                 <a href="https://www.argentina.gob.ar/pautas-para-evitar-que-los-adolescentes-apuesten-online" target="_blank" class="button-menor">SOY MENOR DE 18 AÑOS</a>
             </div>
-
             <p class="subscription-text">¡SUSCRIBITE AHORA Y GANA</p>
             <p class="subscription-text">CON LOS BONOS DE BIENVENIDA</p>
             <p class="subscription-text">MÁS GRANDES DE ARGENTINA!</p>
@@ -27,15 +25,13 @@
     <main>
         <section id="page2" class="content" style="display: none;">
             <img src="images/easybet.png" alt="Logo EasyBet" class="logo-easybet">
-
-            <div class="background-image" style="background-image: url('2.png');"></div>
+            <div class="background-image" style="background-image: url('images/2.png');"></div>
             <form id="myForm" class="form-container">
                 <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
                 <input type="email" id="email" name="email" placeholder="E-mail" required>
                 <input type="tel" id="telefono" name="telefono" placeholder="Contacto +54" required>
                 <button type="submit" class="button-mayor">Suscribirme</button>
             </form>
-
             <div class="image-container">
                 <img src="images/loteria.png" alt="Lotería" class="loteria-image">
                 <img src="images/Ludopatia.jpg" alt="Logo ludopatia" class="small-image">
@@ -44,7 +40,6 @@
 
         <section id="confirmacion" class="content" style="display: none;">
             <img src="images/easybet.png" alt="Logo EasyBet" class="logo-easybet">
-
             <div class="success-message">
                 <h1>¡Registro Exitoso!</h1>
                 <p>Gracias por registrarte en EasyBet. Te contactaremos pronto.</p>
@@ -54,10 +49,11 @@
     </main>
 
     <script>
+        // Obtener la clave API y el ID de Google Sheet desde el servidor
         let sheetId;
         let apiKey;
 
-        fetch('/api-config') // Asegúrate de que esta ruta sea correcta
+        fetch('/api-config')
             .then(response => response.json())
             .then(data => {
                 sheetId = data.sheetId;
@@ -69,6 +65,7 @@
 
         document.getElementById('myForm').addEventListener('submit', function(event) {
             event.preventDefault();
+
             const nombre = document.getElementById('nombre').value;
             const email = document.getElementById('email').value;
             const telefono = document.getElementById('telefono').value;
