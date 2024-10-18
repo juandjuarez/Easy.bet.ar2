@@ -35,10 +35,10 @@ body {
     font-weight: 700;
     color: #fff;
     text-decoration: none;
-    border-radius: 20px;
+    border-radius: 30px;
     border: none;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    max-width: 150px; /* Limitar el ancho máximo */
+    max-width: 250px; /* Limitar el ancho máximo */
 }
 
 .button-mayor { background-color: #F39; }
@@ -62,7 +62,7 @@ body {
 
 .form-container {
    display:flex ; 
-   flex-direction :column ; /* Alinear verticalmente los campos */ 
+   flex-direction :column ;  
    position:absolute ; 
    top :60% ; 
    left :10% ; 
@@ -143,7 +143,7 @@ form button:hover { background-color:#4a1f6b ; }
 .success-message p, .success-message button { margin :10px 0 ; }
 
 /* Media Queries para dispositivos móviles */
-@media (max-width :768px) {
+@media (max-width :400px) {
    .form-container { width :95vw ; left :2.5%; }
    
    form input, form button {
