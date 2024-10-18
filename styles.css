@@ -9,11 +9,7 @@ body {
     position: relative;
     display: flex;
     height: 100vh;
-<<<<<<< HEAD
-    background-image: url(1.png);
-=======
     background-image: url(fondo-1.png);
->>>>>>> 5c13545dcf02915f914dc56f0d824f920a083305
     background-size: cover; /* Mantener el tamaño original */
     background-position: center;
     background-repeat: no-repeat;
@@ -64,11 +60,7 @@ body {
     height: 100vh;
     position: relative;
     overflow: hidden;
-<<<<<<< HEAD
-    background-image: url(2.png);
-=======
     background-image: url(fondo-2.png);
->>>>>>> 5c13545dcf02915f914dc56f0d824f920a083305
     background-size: cover; /* Asegurar que la imagen se ajuste correctamente */
     background-position: center;
     background-repeat: no-repeat;
