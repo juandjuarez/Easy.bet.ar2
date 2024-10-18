@@ -9,7 +9,11 @@ body {
     position: relative;
     display: flex;
     height: 100vh;
+<<<<<<< HEAD
     background-image: url(1.png);
+=======
+    background-image: url(fondo-1.png);
+>>>>>>> 5c13545dcf02915f914dc56f0d824f920a083305
     background-size: cover; /* Mantener el tamaño original */
     background-position: center;
     background-repeat: no-repeat;
@@ -60,7 +64,11 @@ body {
     height: 100vh;
     position: relative;
     overflow: hidden;
+<<<<<<< HEAD
     background-image: url(2.png);
+=======
+    background-image: url(fondo-2.png);
+>>>>>>> 5c13545dcf02915f914dc56f0d824f920a083305
     background-size: cover; /* Asegurar que la imagen se ajuste correctamente */
     background-position: center;
     background-repeat: no-repeat;
@@ -140,6 +148,36 @@ form button:hover {
         width: 95vw;
         left: 2.5%;
     }
+<<<<<<< HEAD
+=======
+
+    form input, form button {
+        width: 85vw; /* Ajustar el ancho en móviles */
+        font-size: 4vw;
+    }
+
+    .button-mayor, .button-menor {
+        padding: 1vw 2vw; /* Limitar el crecimiento de padding en pantallas pequeñas */
+        font-size: 2.5vw; /* Reducir el tamaño de fuente */
+    }
+
+    .button-container {
+        top: 40%;
+        left: 80px; /* Mantener el ajuste a la derecha en móviles */
+    }
+
+    .small-image {
+        width: 40px;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    
+    
+
+
+
+>>>>>>> 5c13545dcf02915f914dc56f0d824f920a083305
 
     form input, form button {
         width: 85vw; /* Ajustar el ancho en móviles */
