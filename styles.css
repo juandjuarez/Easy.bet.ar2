@@ -64,7 +64,7 @@ body {
    display:flex ; 
    flex-direction :column ; /* Alinear verticalmente los campos */ 
    position:absolute ; 
-   top :60% ; 
+   top :70% ; 
    left :5% ; 
    width :60% ; 
    transform :translateY(-50%) ; 
