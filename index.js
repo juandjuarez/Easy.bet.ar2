@@ -1,4 +1,3 @@
-require('dotenv').config(); // Cargar variables de entorno desde .env
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -14,6 +13,10 @@ app.use(cors());
 // Configuración de body-parser para manejar solicitudes con datos en el cuerpo (formulario, JSON)
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
+// Reemplaza con tu API Key y Sheet ID
+const API_KEY = 'AIzaSyAHSMUwPqroN1sA5_2XCcVjEbdxlmw5U48'; 
+const SHEET_ID = '1z6iOzhM_YhMG0_bSPvkQX8ouAjgO5yUiIlxO4Zs1Cf8';
 
 // Ruta principal para verificar si el servidor está corriendo
 app.get('/', (req, res) => {
@@ -37,7 +40,7 @@ app.post('/submit', async (req, res) => {
     };
 
     try {
-        const response = await axios.post(`https://sheets.googleapis.com/v4/spreadsheets/${process.env.SHEET_ID}/values/Sheet1:append?valueInputOption=USER_ENTERED&key=${process.env.API_KEY}`, data);
+        const response = await axios.post(`https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/Sheet1:append?valueInputOption=USER_ENTERED&key=${API_KEY}`, data);
         console.log('Datos enviados a Google Sheets:', response.data);
     } catch (error) {
         console.error('Error al enviar datos a Google Sheets:', error.response ? error.response.data : error.message);
@@ -45,11 +48,6 @@ app.post('/submit', async (req, res) => {
     }
 
     res.send('¡Registro exitoso!');
-});
-
-// Iniciar el servidor en el puerto especificado
-app.listen(port, () => {
-    console.log(`Servidor corriendo en: http://localhost:${port}`);
 });
 
 // Iniciar el servidor en el puerto especificado
