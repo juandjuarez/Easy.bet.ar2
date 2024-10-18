@@ -14,9 +14,6 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-// Reemplaza con tu API Key y Sheet ID
-const API_KEY = 'AIzaSyAHSMUwPqroN1sA5_2XCcVjEbdxlmw5U48'; 
-const SHEET_ID = '1z6iOzhM_YhMG0_bSPvkQX8ouAjgO5yUiIlxO4Zs1Cf8';
 
 // Ruta principal para verificar si el servidor está corriendo
 app.get('/', (req, res) => {
