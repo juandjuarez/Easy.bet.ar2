@@ -9,7 +9,7 @@ body {
     position: relative;
     display: flex;
     height: 100vh;
-    background-image: url(fondo-1.png);
+    background-image: url(1.png);
     background-size: cover; /* Mantener el tamaño original */
     background-position: center;
     background-repeat: no-repeat;
@@ -60,7 +60,7 @@ body {
     height: 100vh;
     position: relative;
     overflow: hidden;
-    background-image: url(fondo-2.png);
+    background-image: url(2.png);
     background-size: cover; /* Asegurar que la imagen se ajuste correctamente */
     background-position: center;
     background-repeat: no-repeat;
