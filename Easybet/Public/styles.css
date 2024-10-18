@@ -156,7 +156,7 @@ form button:hover {
     }
 
     .small-image {
-        width: 40px;
+        width: 0px;
         bottom: 15px;
         right: 15px;
     }
