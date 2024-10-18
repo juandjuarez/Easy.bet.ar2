@@ -64,16 +64,16 @@ body {
    display:flex ; 
    flex-direction :column ; /* Alinear verticalmente los campos */ 
    position:absolute ; 
-   top :50% ; 
+   top :60% ; 
    left :5% ; 
-   width :90% ; 
+   width :60% ; 
    transform :translateY(-50%) ; 
 }
 
 form input {
-   margin :1vh 0 ; /* Espacio entre los campos */ 
+   margin :2vh 0 ; /* Espacio entre los campos */ 
    padding :1rem ; /* Cambiado a rem para mejor control */
-   width :100% ; /* Usar el 100% del ancho disponible */ 
+   width :75% ; /* Usar el 100% del ancho disponible */ 
    max-width :400px ; /* Limitar el ancho máximo */ 
    border-radius :10px ; 
    border :3px solid #ffc0cb ; 
