@@ -30,15 +30,15 @@ body {
 }
 
 .button-mayor, .button-menor {
-    padding: 0.2rem 1.2rem; /* Cambiado a rem para mejor control */
+    padding: 0.6rem 1.2rem; /* Cambiado a rem para mejor control */
     font-size: 1rem; /* Ajustar el tamaño de fuente */
     font-weight: 700;
     color: #fff;
     text-decoration: none;
-    border-radius: 60px;
+    border-radius: 20px;
     border: none;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    max-width: 240px; /* Limitar el ancho máximo */
+    max-width: 150px; /* Limitar el ancho máximo */
 }
 
 .button-mayor { background-color: #F39; }
@@ -64,17 +64,17 @@ body {
    display:flex ; 
    flex-direction :column ; /* Alinear verticalmente los campos */ 
    position:absolute ; 
-   top :70% ; 
-   left :5% ; 
-   width :60% ; 
+   top :60% ; 
+   left :10% ; 
+   width :50% ; 
    transform :translateY(-50%) ; 
 }
 
 form input {
-   margin :2vh 0 ; /* Espacio entre los campos */ 
-   padding :1rem ; /* Cambiado a rem para mejor control */
-   width :75% ; /* Usar el 100% del ancho disponible */ 
-   max-width :400px ; /* Limitar el ancho máximo */ 
+   margin :1vh 0 ;  
+   padding :1rem ; 
+   width :75% ;  
+   max-width :400px ;  
    border-radius :10px ; 
    border :3px solid #ffc0cb ; 
    background-color :#fff ; 
@@ -82,13 +82,13 @@ form input {
 
 form input::placeholder { color :#ccc ; }
 form button {
-   padding :1rem 2rem ; /* Cambiado a rem para mejor control */
+   padding :1rem 2rem ; 
    background-color :#5E2D8A ; 
    color :#fff ; 
    border-radius :50px ; 
    cursor:pointer ; 
    font-weight :700 ; 
-   font-size :1rem ; /* Cambiado a rem para mejor control */
+   font-size :1rem ; 
    transition :background-color 0.3s ease ; 
 }
 
@@ -101,13 +101,19 @@ form button:hover { background-color:#4a1f6b ; }
    display:flex ; /* Usar flexbox para alinear las imágenes */ 
 }
 
-.small-image { width :150px ; margin-right :10px ; } /* Tamaño de la imagen Ludopatia */
-.loteria-image { width :150px ; } /* Tamaño de la imagen Lotería */
+.loteria-image {
+   margin-bottom: 10px; /* Espacio inferior para separar de Ludopatía */
+}
+
+.small-image {
+   width :150px ;
+   margin-left: 10px; /* Espacio a la izquierda para separación */
+}
 
 .logo-easybet {
    position :relative ;
    top :20px ; /* Ajusta según sea necesario */
-   left :70px; /* Ajuste para alinearlo a la izquierda */
+   left :80px; /* Ajuste para alinearlo a la izquierda */
    width :300px ; /* Mantén el mismo tamaño */
 }
 
@@ -117,7 +123,7 @@ form button:hover { background-color:#4a1f6b ; }
    font-size :24px ; /* Ajustado para que no sea tan grande */
    font-weight :bold ;
    font-family :'Poppins', sans-serif ;
-   margin-left :70px; /* Ajuste para alinearlo a la izquierda */
+   margin-left :80px; /* Ajuste para alinearlo a la izquierda */
    text-align:left; /* Alinear texto a la izquierda */
 }
 
@@ -157,8 +163,7 @@ form button:hover { background-color:#4a1f6b ; }
    .logo-easybet { width :150px ; }
    
    .subscription-text { 
-       font-size :5vw ;/* Ajusta el tamaño de fuente para pantallas pequeñas */
+       font-size :5vw ;
        margin-left :0 ; 
-       text-align:left; /* Alinear texto a la izquierda en móviles también*/
-   }
+       text-align:left; 
 }
