@@ -21,15 +21,13 @@ body {
     background-repeat: no-repeat;
 }
 
-.header-content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end; /* Alinear a la derecha */
-    margin-right: 30px; /* Espacio a la derecha */
-}
-
-.subscription-container {
-    text-align: right; /* Alinear el texto a la derecha */
+.subscription-text {
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 .button-container {
@@ -80,7 +78,7 @@ body {
 }
 
 form input {
-    margin: 1vh 0;
+    margin: 1vh 0; 
     padding: 1rem; 
     width: 100%; 
     max-width: 400px; 
@@ -116,40 +114,21 @@ form button:hover { background-color: #4a1f6b; }
 
 .small-image { width: 150px; margin-right: 10px; }
 .loteria-image { width: 150px; }
-.logo-easybet { position: relative; width: 200px; }
+.logo-easybet { position: relative; top: 20px; left: 30px; width: 200px; }
 
-.subscription-text {
-    position: relative;
-    color: lightpink;
-    font-size: 24px; 
-    font-weight: bold;
-    font-family: 'Poppins', sans-serif;
-    margin-left: 30px;
-    text-align: center;
-}
-
-.subscription-text + .subscription-text { margin-top: 5px; }
-
-.success-message {
-    display: flex; 
-    flex-direction: column;
-    position: absolute;
-    top: 50%;
-    left: 5%;
-    transform: translateY(-50%);
-}
-
-.success-message p, .success-message button { margin: 10px 0; }
-
-/* Nuevo texto en la segunda página */
-.footer-text {
+.footer-text, .footer-text-small {
     position: absolute;
     bottom: 20px; 
     left: 30px; 
     color: white; 
-    font-size: 12px; /* Texto más pequeño */
+    font-size: 12px; 
     text-align: left; 
-    max-width: 300px; /* Ajustar ancho máximo */
+    max-width: 300px; 
+    line-height: 1.5; 
+}
+
+.footer-text-small {
+    font-size: 10px; /* Tamaño más pequeño para el texto adicional */
 }
 
 /* Media Queries para dispositivos móviles */
@@ -177,8 +156,6 @@ form button:hover { background-color: #4a1f6b; }
         margin-left: 0; 
         text-align: center; 
     }
-
-    .footer-text { font-size: 10px; } /* Ajuste para el texto en móviles */
 }
 
 
