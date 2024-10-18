@@ -5,17 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EasyBet</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css"> <!-- Ruta al CSS -->
-    <script src="scripts.js" defer></script> <!-- Ruta al JavaScript -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
 </head>
 <body>
     <header>
         <section id="page1" class="hero">
-            <img src="Easybet.png" alt="Logo EasyBet" class="logo-easybet">
+            <!-- Imagen EasyBet añadida aquí -->
+            <img src="images/easybet.png" alt="Logo EasyBet" class="logo-easybet"> <!-- Nueva imagen añadida -->
+
             <div class="button-container">
                 <a href="javascript:void(0);" onclick="mostrarPagina2()" class="button-mayor">SOY MAYOR DE 18 AÑOS</a>
                 <a href="https://www.argentina.gob.ar/pautas-para-evitar-que-los-adolescentes-apuesten-online" target="_blank" class="button-menor">SOY MENOR DE 18 AÑOS</a>
             </div>
+
+            <!-- Texto seccionado en tres párrafos -->
             <p class="subscription-text">¡SUSCRIBITE AHORA Y GANA</p>
             <p class="subscription-text">CON LOS BONOS DE BIENVENIDA</p>
             <p class="subscription-text">MÁS GRANDES DE ARGENTINA!</p>
@@ -24,25 +28,33 @@
 
     <main>
         <section id="page2" class="content" style="display: none;">
-            <img src="Easybet.png" alt="Logo EasyBet" class="logo-easybet">
-            <div class="background-image" style="background-image: url('2.png');"></div>
+            <!-- Imagen EasyBet también aquí -->
+            <img src="images/easybet.png" alt="Logo EasyBet" class="logo-easybet"> <!-- Nueva imagen añadida -->
+
+            <div class="background-image" style="background-image: url('images/2.png');"></div>
             <form id="myForm" class="form-container">
                 <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
                 <input type="email" id="email" name="email" placeholder="E-mail" required>
                 <input type="tel" id="telefono" name="telefono" placeholder="Contacto +54" required>
                 <button type="submit" class="button-mayor">Suscribirme</button>
             </form>
+
+            <!-- Contenedor para las imágenes -->
             <div class="image-container">
-                <img src="Loteria.png" alt="Lotería" class="loteria-image">
-                <img src="Ludopatia.jpg" alt="Logo ludopatia" class="small-image">
+                <!-- Intercambiamos las posiciones de las imágenes aquí -->
+                <img src="images/loteria.png" alt="Lotería" class="loteria-image"> <!-- Lotería ahora primero -->
+                <img src="images/Ludopatia.jpg" alt="Logo ludopatia" class="small-image"> <!-- Ludopatía ahora segundo -->
             </div>
         </section>
 
         <section id="confirmacion" class="content" style="display: none;">
-            <img src="Easybet.png" alt="Logo EasyBet" class="logo-easybet">
+            <!-- Imagen EasyBet también aquí -->
+            <img src="images/easybet.png" alt="Logo EasyBet" class="logo-easybet"> <!-- Nueva imagen añadida -->
+
             <div class="success-message">
                 <h1>¡Registro Exitoso!</h1>
                 <p>Gracias por registrarte en EasyBet. Te contactaremos pronto.</p>
+                <!-- Cambié el enlace para usar la función mostrarPagina1() -->
                 <a href="javascript:void(0);" onclick="mostrarPagina1()" class="button-mayor">Volver al inicio</a>
             </div>
         </section>
@@ -53,7 +65,7 @@
         let sheetId;
         let apiKey;
 
-        fetch('/api-config')
+        fetch('/api-config') // Cambia a la ruta de tu servidor que devuelve la configuración
             .then(response => response.json())
             .then(data => {
                 sheetId = data.sheetId;
@@ -63,19 +75,22 @@
                 console.error('Error al obtener la configuración:', error);
             });
 
+        // Agregar evento al formulario cuando se envíe
         document.getElementById('myForm').addEventListener('submit', function(event) {
-            event.preventDefault();
+            event.preventDefault(); // Evita que el formulario se envíe de forma tradicional
 
             const nombre = document.getElementById('nombre').value;
             const email = document.getElementById('email').value;
             const telefono = document.getElementById('telefono').value;
 
+            // Define los datos a enviar
             const data = {
-                range: 'Sheet1!A:C',
+                range: 'Sheet1!A:C', // Ajusta el rango según tus necesidades en la hoja
                 majorDimension: 'ROWS',
-                values: [[nombre, email, telefono]]
+                values: [[nombre, email, telefono]] // Los datos que se van a agregar
             };
 
+            // Envía la solicitud POST a la API de Google Sheets
             fetch(`https://sheets.googleapis.com/v4/spreadsheets/${sheetId}/values/Sheet1:append?valueInputOption=USER_ENTERED&key=${apiKey}`, {
                 method: 'POST',
                 headers: {
@@ -86,7 +101,7 @@
             .then(response => response.json())
             .then(result => {
                 console.log('Success:', result);
-                mostrarConfirmacion();
+                mostrarConfirmacion(); // Muestra la página de confirmación
             })
             .catch(error => {
                 console.error('Error:', error);
@@ -94,16 +109,19 @@
             });
         });
 
+        // Función para mostrar la página 2 (Formulario)
         function mostrarPagina2() {
             document.getElementById('page1').style.display = 'none';
             document.getElementById('page2').style.display = 'block';
         }
 
+        // Función para mostrar la página de confirmación
         function mostrarConfirmacion() {
             document.getElementById('page2').style.display = 'none';
             document.getElementById('confirmacion').style.display = 'block';
         }
 
+        // Función para volver al inicio (Página 1)
         function mostrarPagina1() {
             document.getElementById('confirmacion').style.display = 'none';
             document.getElementById('page1').style.display = 'block';
