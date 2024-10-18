@@ -15,7 +15,7 @@ body {
     flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
     align-items: flex-start; /* Alinea los elementos al inicio (izquierda) */
     height: 100vh;
-    background-image: url(images/1.png);
+    background-image: url('./images/1.png'); 
     background-size: cover; /* Mantener el tamaño original */
     background-position: center;
     background-repeat: no-repeat;
