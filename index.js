@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const axios = require('axios'); // Importa axios para hacer solicitudes HTTP
+const db = require('./db'); 
 
 // Inicializar la aplicación de Express
 const app = express();
@@ -14,14 +14,13 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-
 // Ruta principal para verificar si el servidor está corriendo
 app.get('/', (req, res) => {
     res.send('EasyBet pre-registro');
 });
 
-// Ruta para manejar la recepción de datos del formulario y guardarlos en Google Sheets
-app.post('/submit', async (req, res) => {
+// Ruta para manejar la recepción de datos del formulario y guardarlos en SQLite
+app.post('/submit', (req, res) => {
     const { nombre, email, telefono } = req.body;
 
     // Validar los campos requeridos
@@ -29,25 +28,22 @@ app.post('/submit', async (req, res) => {
         return res.status(400).send('Todos los campos son obligatorios.');
     }
 
-    // Enviar los datos a Google Sheets
-    const data = {
-        range: 'Sheet1!A:C', // Ajusta el rango según tu hoja
-        majorDimension: 'ROWS',
-        values: [[nombre, email, telefono]], // Datos a agregar
-    };
-
-    try {
-        const response = await axios.post(`https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/Sheet1:append?valueInputOption=USER_ENTERED&key=${API_KEY}`, data);
-        console.log('Datos enviados a Google Sheets:', response.data);
-    } catch (error) {
-        console.error('Error al enviar datos a Google Sheets:', error.response ? error.response.data : error.message);
-        return res.status(500).send('Error al registrar los datos en Google Sheets.');
-    }
-
-    res.send('¡Registro exitoso!');
+    // Usar db.serialize para asegurar que las operaciones se ejecuten en orden
+    db.serialize(() => {
+        const stmt = db.prepare("INSERT INTO usuarios (nombre, email, telefono) VALUES (?, ?, ?)");
+        stmt.run(nombre, email, telefono, function(err) {
+            if (err) {
+                console.error('Error al insertar usuario:', err);
+                return res.status(500).send('Error al guardar los datos.');
+            }
+            res.send('¡Registro exitoso!');
+        });
+        stmt.finalize(); // Finalizar la declaración
+    });
 });
-
+const config = require('./config'); // Asegúrate de usar './' para rutas relativas
 // Iniciar el servidor en el puerto especificado
 app.listen(port, () => {
     console.log(`Servidor corriendo en: http://localhost:${port}`);
 });
+
