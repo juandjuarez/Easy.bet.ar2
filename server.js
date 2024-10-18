@@ -1,35 +1,30 @@
-require('dotenv').config();
 const express = require('express');
-const axios = require('axios');
 const cors = require('cors');
+const bodyParser = require('body-parser');
+const db = require('./database'); // Asegúrate de que este archivo contenga la conexión a SQLite
 
 const app = express();
 const port = process.env.PORT || 3000;
 
 // Configurar middleware
 app.use(cors());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 // Ruta para manejar el formulario
-app.post('/submit', async (req, res) => {
+app.post('/guardar-datos', (req, res) => { // Cambiado a /guardar-datos
     const { nombre, email, telefono } = req.body;
 
-    // Envío a Google Sheets
-    const data = {
-        range: 'Sheet1!A1:C1',
-        majorDimension: 'ROWS',
-        values: [[nombre, email, telefono]],
-    };
-
-    try {
-        const response = await axios.post(`https://sheets.googleapis.com/v4/spreadsheets/${process.env.SHEET_ID}/values/Sheet1:append?valueInputOption=USER_ENTERED&key=${process.env.API_KEY}`, data);
-        console.log('Datos enviados a Google Sheets:', response.data);
+    // Preparar la declaración SQL
+    const stmt = db.prepare("INSERT INTO usuarios (nombre, email, telefono) VALUES (?, ?, ?)");
+    stmt.run(nombre, email, telefono, function(err) {
+        if (err) {
+            console.error('Error al insertar usuario:', err.message);
+            return res.status(500).json({ error: 'Error al guardar los datos' });
+        }
         res.status(200).json({ message: 'Formulario enviado correctamente' });
-    } catch (error) {
-        console.error('Error al enviar datos a Google Sheets:', error);
-        res.status(500).json({ error: 'Error al enviar datos a Google Sheets' });
-    }
+    });
+    stmt.finalize();
 });
 
 // Iniciar el servidor
