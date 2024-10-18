@@ -140,9 +140,6 @@ form button:hover {
         width: 95vw;
         left: 2.5%;
     }
-<<<<<<< HEAD
-=======
-
     form input, form button {
         width: 85vw; /* Ajustar el ancho en móviles */
         font-size: 4vw;
