@@ -27,12 +27,10 @@
                 <input type="tel" id="telefono" name="telefono" placeholder="Contacto +54" required>
                 <button type="submit" class="button-mayor">Suscribirme</button>
             </form>
-            
-            
+
             <img src="Ludopatia.jpg" alt="Logo ludopatia" class="small-image">
         </section>
 
-        
         <section id="confirmacion" class="content" style="display: none;">
             <div class="success-message">
                 <h1>¡Registro Exitoso!</h1>
@@ -43,8 +41,19 @@
     </main>
 
     <script>
-        const sheetId = '1z6iOzhM_YhMG0_bSPvkQX8ouAjgO5yUiIlxO4Zs1Cf8'; // Reemplaza con tu ID de Google Sheet
-        const apiKey = 'AIzaSyAHSMUwPqroN1sA5_2XCcVjEbdxlmw5U48'; // Reemplaza con tu clave API
+        // Obtener la clave API y el ID de Google Sheet desde el servidor
+        let sheetId;
+        let apiKey;
+
+        fetch('/api-config') // Cambia a la ruta de tu servidor que devuelve la configuración
+            .then(response => response.json())
+            .then(data => {
+                sheetId = data.sheetId;
+                apiKey = data.apiKey;
+            })
+            .catch(error => {
+                console.error('Error al obtener la configuración:', error);
+            });
 
         // Agregar evento al formulario cuando se envíe
         document.getElementById('myForm').addEventListener('submit', function(event) {
