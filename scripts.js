@@ -7,7 +7,7 @@ document.getElementById('myForm').addEventListener('submit', function(event) {
     const telefono = document.getElementById('telefono').value;
 
     // Enviar datos al servidor
-    fetch('/', {  // Cambiado a la ruta raíz, Netlify manejará el envío
+    fetch('/.netlify/functions/submit', {  // Cambiado a la ruta raíz, Netlify manejará el envío
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
